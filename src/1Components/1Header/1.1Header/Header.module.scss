@@ -1,0 +1,17 @@
+.headContainer {
+    display:flex;
+    position: fixed;
+    height: 80px;
+    width:1440px;
+    justify-content: space-between;
+    background-color: #ffffff;
+    margin-top: -8px;
+    .logo{
+      display:flex;
+      position: relative;
+      width: 41px;
+      height: 41px;
+      margin-top:20px;
+      margin-right: 70px;
+    }
+  }

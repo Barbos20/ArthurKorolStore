@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Header.module.scss";
-import logo from "../../../IMG/icons/a-logo.svg";
+import logo from "../../../icons/a-logo.svg";
 import { Navigator } from "../1.2Navigation/Navigator";
 import { Currency } from "../1.3Action/Currency/Currency";
 

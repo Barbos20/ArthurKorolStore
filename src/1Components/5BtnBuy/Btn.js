@@ -1,11 +1,14 @@
 import React from 'react'
-import CircleIcon from '../../IMG/icons/cart.svg'
+import CircleIcon from '../../icons/cart.svg'
 import style from './Btn.module.scss'
 
 export const Btn=({onClick,type,children,size='s'})=>{
   return (
-    <img src={CircleIcon} onClick={onClick} className={style.Btn} alt='btn'>
+    <div onClick={onClick} className={style.Btn} >
+      <div>
+        <img src={CircleIcon} alt='btn' />
+      </div>
 {children}
-        </img>
+        </div>
   )
 }

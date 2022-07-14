@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 // import CartModal from "../../1.1CartModal/CartModal";
 import style from "./Currency.module.scss";
-import ArrowIcon from "../../../../IMG/icons/Vector.svg";
-import EmptyCart from "../../../../IMG/icons/CircleIcon.svg";
-import { CartModal } from "../Cart/CartModal";
+import ArrowIcon from "../../../../icons/Vector.svg";
+import EmptyCart from "../../../../icons/CircleIcon.svg";
+import { CartHeader } from "../Cart/CartHeader";
 
 export const Currency = () => {
   // const [activeModal, setActiveModal]=useState(false)
@@ -86,7 +86,7 @@ export const Currency = () => {
       <div className={style.Empty}>
       {/* <img src={EmptyCart} onClick={()=>{setActiveModal(!activeModal)}}/> */}
       {/* <CartModal trigger={activeModal}/> */}
-      <CartModal/>
+      <CartHeader/>
       </div>
     </div>
   );

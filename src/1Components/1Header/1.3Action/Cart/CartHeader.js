@@ -8,7 +8,7 @@ import { CartModal } from './CartModal'
 export const CartHeader = () => {
   const [isCartMenuVisicle,setIsCartMenuVisible]=useState(false)
   const items = useSelector(state => state.cart.itemsInCart)
-  const totalPrice = calcTotalPrice(items)
+  // const totalPrice = calcTotalPrice(items)
   return (
     <div>
       

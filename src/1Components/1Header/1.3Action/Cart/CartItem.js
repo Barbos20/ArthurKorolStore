@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import style from './CartItem.module.scss'
 
 export const CartItem = ({ key, image, price, title, id }) => {
-    const[item, setItem]=useState(1)
     return (
         <div className={style.container}>
             <div className={style.description}>

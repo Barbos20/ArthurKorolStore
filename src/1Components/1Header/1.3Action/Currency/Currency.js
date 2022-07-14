@@ -1,12 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-// import CartModal from "../../1.1CartModal/CartModal";
 import style from "./Currency.module.scss";
 import ArrowIcon from "../../../../icons/Vector.svg";
-import EmptyCart from "../../../../icons/CircleIcon.svg";
 import { CartHeader } from "../Cart/CartHeader";
 
 export const Currency = () => {
-  // const [activeModal, setActiveModal]=useState(false)
   const [currentValue, setCurrentValue] = useState({
     id: "dollar",
     currencySymbol: "$",
@@ -46,7 +43,6 @@ export const Currency = () => {
     };
   }, [outsideHandler]);
 
-
   return (
     <div className={style.page}>
       <div
@@ -60,7 +56,7 @@ export const Currency = () => {
           {currentValue.currencySymbol}
           <img
             className={isOpenSelectList ? style.Open : style.Arrow}
-            src={ArrowIcon}
+            src={ArrowIcon} alt='img'
           />
         </div>
         {isOpenSelectList && (
@@ -84,8 +80,6 @@ export const Currency = () => {
         )}
       </div>
       <div className={style.Empty}>
-      {/* <img src={EmptyCart} onClick={()=>{setActiveModal(!activeModal)}}/> */}
-      {/* <CartModal trigger={activeModal}/> */}
       <CartHeader/>
       </div>
     </div>

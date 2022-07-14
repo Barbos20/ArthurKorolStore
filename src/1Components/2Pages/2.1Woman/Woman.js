@@ -14,42 +14,42 @@ export const PRODUCT = [
   {
     image: '/imgElements/img1.png',
     title: "Apollo Runnung Short",
-    price: "60.00",
+    price: 60.00,
     // path: `${routesPath.product1}`,
     id:1
   },
   {
     image: '/imgElements/img4.png',
     title: "Apollo Runnung Short",
-    price: "50.00",
+    price: 50.00,
     // path:'',
     id: 2
   },
   {
     image: '/imgElements/img2.png',
     title: "Apollo Runnung Short",
-    price: "50.00",
+    price: 50.00,
     // path:'',
     id: 3
   },
   {
     image: '/imgElements/img1.png',
     title: "Apollo Runnung Short",
-    price: "60.00",
+    price: 50.00,
     // path: `${routesPath.product1}`,
     id:4,
   },
   {
     image: '/imgElements/img3.png',
     title: "Apollo Runnung Short",
-    price: "50.00",
+    price: 50.00,
     // path:'',
     id: 5
   },
   {
     image: '/imgElements/img3.png',
     title: "Apollo Runnung Short",
-    price: "50.00",
+    price: 50.00,
     // path:'',
     id: 6
   },

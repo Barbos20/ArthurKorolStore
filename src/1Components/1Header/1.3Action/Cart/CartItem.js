@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import style from './CartItem.module.scss'
 
 export const CartItem = ({ key, image, price, title, id }) => {
+    
     return (
         <div className={style.container}>
             <div className={style.description}>

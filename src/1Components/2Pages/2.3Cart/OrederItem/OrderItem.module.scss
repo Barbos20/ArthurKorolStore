@@ -7,6 +7,7 @@
     align-items: center;
     width: 1240px;
     height: 336px;
+    margin-bottom: -1px;
 
     .atributes {
         .title {
@@ -17,7 +18,13 @@
             line-height: 27px;
         }
 
-        .price {}
+        .price {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 24px;
+        }
 
         .size {
             h3 {
@@ -95,10 +102,9 @@
 
     .view {
         display: flex;
-        align-items: center;
         .quantity {
-            width: 24px;
-            height: 190px;
+            width: 45px;
+            height: 288px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -109,8 +115,8 @@
             font-size: 16px;
             line-height: 160%;
             margin-right: 24px;
-    
-            button {
+
+            .btn {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -118,13 +124,12 @@
                 font-style: normal;
                 font-weight: 300;
                 font-size: 30px;
-                width: 24px;
-                height: 24px;
+                width: 45px;
+                height: 45px;
                 border: 1px #1D1F22 solid;
-                line-height: '';
                 color: #1D1F22;
                 background-color: #ffffff;
-    
+
                 .minus {
                     padding-bottom: 4px;
                 }
@@ -133,7 +138,7 @@
 
         .IMG {
             width: 200px;
-            height:288px;
+            height: 288px;
         }
     }
 }

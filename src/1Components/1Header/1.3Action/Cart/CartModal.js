@@ -17,7 +17,11 @@ export const CartModal = ({ items, active, setActive}) => {
             <div className={style.cartModal}onClick={(e)=>{e.stopPropagation()}}>
                 <div className={style.items}>
                     <h1>My Bag,</h1>
-                    <p>1 item</p>
+                    <p>{items.length}</p>
+                    <p/>
+                    {
+                    items.length >1 ? 'items': 'item'
+                    }
                 </div>
                 <div className={style.item}>
                     <div className={style.title}>

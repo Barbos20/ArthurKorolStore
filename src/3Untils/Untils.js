@@ -10,3 +10,8 @@ export const calcTotalPrice = (items) => {
 //         sum
 //     )
 // }
+
+export const Plus= (items) => {
+    const sum = items+= 1
+    return sum
+}

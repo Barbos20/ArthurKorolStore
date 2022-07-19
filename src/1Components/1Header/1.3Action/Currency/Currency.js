@@ -4,6 +4,7 @@ import ArrowIcon from "../../../../icons/Vector.svg";
 import { CartHeader } from "../Cart/CartHeader";
 
 export const Currency = () => {
+
   const [currentValue, setCurrentValue] = useState({
     id: "dollar",
     currencySymbol: "$",
@@ -63,7 +64,7 @@ export const Currency = () => {
           <div ref={listRef} className={style.List}>
             {items.map(
               (item) => {
-                const { currencySymbol, shortName } = item;
+                const { currencySymbol, shortName} = item;
                 return (
                   <div
                     className={style.ItemList}
@@ -71,7 +72,7 @@ export const Currency = () => {
                       itemOnClick(item);
                     }}
                   >
-                    {`${currencySymbol} ${shortName}`}
+                    {`${currencySymbol} ${shortName} `}
                   </div>
                 );
               }
@@ -80,7 +81,7 @@ export const Currency = () => {
         )}
       </div>
       <div className={style.Empty}>
-      <CartHeader/>
+        <CartHeader />
       </div>
     </div>
   );

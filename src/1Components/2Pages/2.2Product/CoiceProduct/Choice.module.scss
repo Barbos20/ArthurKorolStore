@@ -1,0 +1,17 @@
+.container{
+    display:flex;
+    justify-content: space-between;
+    .choice{
+        display: flex;
+        flex-direction: column;
+        .Img{
+        width:79px;
+        height: 80px;
+        margin-bottom: 33px;
+        }
+    }
+    .img{
+        width: 610px;
+        height: 511px;
+    }
+}

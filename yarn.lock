@@ -10341,7 +10341,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router@npm:6.3.0":
+"react-router@npm:6.3.0, react-router@npm:^6.3.0":
   version: 6.3.0
   resolution: "react-router@npm:6.3.0"
   dependencies:
@@ -11356,6 +11356,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-redux: ^8.0.2
+    react-router: ^6.3.0
     react-router-dom: ^6.3.0
     react-scripts: 5.0.1
     sass: ^1.53.0

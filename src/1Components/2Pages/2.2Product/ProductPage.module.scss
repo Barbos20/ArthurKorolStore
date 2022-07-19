@@ -1,0 +1,172 @@
+.page {
+    display: flex;
+    justify-content: center;
+    width: 1002px;
+    height: 595px;
+    margin-top: 160px;
+    margin-right: 100px;
+
+    .description {
+        display: flex;
+        flex-direction: row;
+
+        .img {
+            height: 511px;
+            width: 730px;
+        }
+
+        .name {
+            margin-left: 100px;
+            width: 292px;
+            font-family: "Raleway";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 27px;
+            h1 {
+                font-family: "Raleway";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 30px;
+                line-height: 27px;
+            }
+
+            p {
+                margin-top: -4px;
+                font-family: "Raleway";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 27px;
+            }
+
+            .attributes {
+                .size {
+                    margin-top: 43px;
+
+                    h3 {
+                        margin-bottom: -11px;
+                        font-family: "Roboto Condensed";
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 18px;
+                    }
+
+                    ul {
+                        display: flex;
+                        margin-left: -40px;
+                    }
+
+                    li {
+                        cursor: pointer;
+                        list-style: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 45px;
+                        width: 63px;
+                        border: 1px solid #1d1f22;
+                        margin-right: 12px;
+                        font-family: "Source Sans Pro";
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 18px;
+                    }
+                }
+
+                .color {
+                    margin-top: 4px;
+
+                    h3 {
+                        font-family: "Roboto Condensed";
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 18px;
+                    }
+
+                    .manyColor {
+                        margin-top: -11px;
+                        display: flex;
+
+                        .grey {
+                            cursor: pointer;
+                            height: 32px;
+                            width: 32px;
+                            background-color: #d3d2d5;
+                            margin-right: 8px;
+                        }
+
+                        .black {
+                            cursor: pointer;
+                            height: 32px;
+                            width: 32px;
+                            background-color: #2b2b2b;
+                            margin-right: 8px;
+                        }
+
+                        .green {
+                            cursor: pointer;
+                            height: 32px;
+                            width: 32px;
+                            background-color: #0f6450;
+                        }
+                    }
+                }
+
+                .price {
+                    margin-top: 38px;
+
+                    h3 {
+                        font-family: "Roboto Condensed";
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 18px;
+                    }
+
+                    h1 {
+                        margin-top: -10px;
+                        font-family: "Raleway";
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 24px;
+                        line-height: 18px;
+                    }
+
+                    button {
+                        cursor: pointer;
+                        margin-top: 20px;
+                        text-decoration: none;
+                        width: 292px;
+                        height: 52px;
+                        background: #5ece7b;
+                        border: none;
+                        font-family: "Raleway";
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 120%;
+                        color: #ffffff;
+                    }
+                }
+
+                .about {
+                    width: 292px;
+                    margin-top: 40px;
+
+                    p {
+                        font-family: "Roboto";
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 25.59px;
+                        color: #1d1f22;
+                    }
+                }
+            }
+        }
+    }
+}

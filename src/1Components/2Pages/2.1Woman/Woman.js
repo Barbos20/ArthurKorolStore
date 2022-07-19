@@ -1,4 +1,5 @@
 import React from 'react'
+import { RoutesPath } from '../../../4RoutesPath/RoutesPath';
 import { ProductItems } from '../../3ProductItems/ProductItems';
 import style from './Woman.module.scss';
 // import img1 from '../../../IMG/imgElements/img1.png';
@@ -6,37 +7,34 @@ import style from './Woman.module.scss';
 // import img3 from '../../../IMG/imgElements/img3.png';
 // import img4 from '../../../IMG/imgElements/img4.png';
 
-export const iconStyle = (logo) => ({
-  backgroundImage: "url(" + logo + ")",
-});
 
 export const PRODUCT = [
   {
     image: '/imgElements/img1.png',
     title: "Apollo Runnung Short",
     price: 60.00,
-    // path: `${routesPath.product1}`,
+    path: `${RoutesPath.product}`,
     id:1
   },
   {
     image: '/imgElements/img4.png',
     title: "Apollo Runnung Short",
     price: 50.00,
-    // path:'',
+    path:'',
     id: 2
   },
   {
     image: '/imgElements/img2.png',
     title: "Apollo Runnung Short",
     price: 50.00,
-    // path:'',
+    path:'',
     id: 3
   },
   {
     image: '/imgElements/img1.png',
     title: "Apollo Runnung Short",
     price: 50.00,
-    // path: `${routesPath.product1}`,
+    path: `${RoutesPath.product}`,
     id:4,
   },
   {

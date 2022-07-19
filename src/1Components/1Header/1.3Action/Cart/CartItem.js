@@ -9,7 +9,7 @@ export const CartItem = ({ key, image, price, title, id }) => {
                     {title}
                 </div>
                 <div className={style.price}>
-                    {price}
+                    {price.toFixed(2)}
                 </div>
                 <div className={style.size}></div>
                 <div className={style.color}></div>
@@ -20,7 +20,7 @@ export const CartItem = ({ key, image, price, title, id }) => {
                 <button onClick={()=>null}><div className={style.minus}>-</div></button>
             </div>
             <div className={style.image}>
-                <img alt='img' src={image}/>
+                <img alt='img' src={image} className={style.img}/>
             </div>
         </div>
     )

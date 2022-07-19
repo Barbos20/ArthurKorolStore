@@ -7,6 +7,7 @@ import style from './CartModal.module.scss'
 
 
 export const CartModal = ({ items, active, setActive}) => {
+    console.log(items)
     return (
         <div className={style.container} onClick={()=>{setActive(!active)}}>
             <div className={style.cartModal}onClick={(e)=>{e.stopPropagation()}}>

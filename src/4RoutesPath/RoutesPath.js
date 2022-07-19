@@ -1,3 +1,5 @@
 export const RoutesPath={
-    product:'/product'
+    product:'/product',
+    cart:'/cart',
+    woman:'/woman'
 }

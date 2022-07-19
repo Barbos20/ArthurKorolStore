@@ -17,8 +17,7 @@ export const ProductItems = ({ product }) => {
         e.stopPropagation()
         dispatch(setItemInCart(product))
     }
-    const openProduct = (e) => {
-        e.stopPropagation()
+    const openProduct = () => {
         dispatch(setCurrentProduct(product))
         navigate(RoutesPath.product)
     }

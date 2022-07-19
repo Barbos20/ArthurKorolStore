@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useCallback } from 'react'
+import { useNavigate } from 'react-router'
 import { calcTotalPrice } from '../../../../3Untils/Untils'
-import { Btn } from '../../../5BtnBuy/Btn'
-import { ItemInCart } from '../ItemInCart/ItemInCart'
 import { CartItem } from './CartItem'
+import {RoutesPath} from '../../../../4RoutesPath/RoutesPath'
 import style from './CartModal.module.scss'
 
 
 export const CartModal = ({ items, active, setActive}) => {
-    console.log(items)
+    const navigate = useNavigate()
+    const openCart = useCallback(()=>{
+        setActive(!active)
+        navigate(RoutesPath.cart)
+    },[navigate])
     return (
         <div className={style.container} onClick={()=>{setActive(!active)}}>
             <div className={style.cartModal}onClick={(e)=>{e.stopPropagation()}}>
@@ -28,7 +32,7 @@ export const CartModal = ({ items, active, setActive}) => {
                         <h1 className={style.sum}>{calcTotalPrice(items)}</h1>
                     </div>
                     <div className={style.button}>
-                        <button className={style.button1}>VIEW BAG</button>
+                        <button className={style.button1} onClick={openCart}>VIEW BAG</button>
                         <button className={style.button2}>CHECK OUT</button>
                     </div>
                     <div>

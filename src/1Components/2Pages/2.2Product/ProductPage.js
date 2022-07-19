@@ -18,8 +18,6 @@ const handleClick=(e)=>{
   return (
     <div className={style.page}>
       <div className={style.description}>
-        <div className={style.choice}>
-        </div>
         <div className={style.img}>
           <Choice />
         </div>

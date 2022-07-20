@@ -36,7 +36,7 @@ const plus = ()=>{
             </div>
             <div className={style.view}>
                 <div className={style.quantity}>
-                    <button className={style.btn} onClick={plus}>+</button>
+                    <div className={style.btn} onClick={plus}>+</div>
                     <div>1</div>
                     <div className={style.btn} onClick={() => null}><div className={style.minus}>-</div></div>
                 </div>

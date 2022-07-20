@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setItemInCart } from '../../../2Redux/Cart/reducer';
 import { Choice } from './CoiceProduct/Choice';
-import classNames from 'classnames';
 import Grey from './color/grey.svg'
 import Black from './color/black.svg'
 import Green from './color/green.svg'
@@ -12,11 +11,11 @@ import style from './ProductPage.module.scss'
 export const ProductPage = () => {
   const product = useSelector(state => state.product.currentProduct);
   const sizeType = ['XS', 'S', 'M', 'L']
-  const colorType = [{ src: Grey }, { src: Black }, { src: Green }]
+  const colorType = [{ src: Grey}, { src: Black }, { src: Green }]
 
 
-  const [size, setSize] = React.useState(product.size[1])
-  const [color, setColor] = React.useState(product.color[1])
+  const [size, setSize] = React.useState(1)
+  const [color, setColor] = React.useState(0)
 
   const dispatch = useDispatch()
   
@@ -24,6 +23,11 @@ export const ProductPage = () => {
 
   const handleClick = (e) => {
     e.stopPropagation()
+    const obj={
+      product,
+      size:sizeType[size],
+      color:colorType[color]
+    }
     dispatch(setItemInCart(product))
   }
 
@@ -34,13 +38,11 @@ export const ProductPage = () => {
     setColor(index)
   }
 
-console.log(product.title, product.size, product.color)
-
   return (
     <div className={style.page}>
       <div className={style.description}>
         <div className={style.img}>
-          <Choice />
+          <Choice key={product.id }/>
         </div>
         <div className={style.name}>
           {product.title}

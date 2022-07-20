@@ -13,7 +13,7 @@ export const CartHeader = () => {
       
       <img src={EmptyCart} onClick={() => {setIsCartMenuVisible(!isCartMenuVisicle)}} alt='cart'/>
       <ItemInCart quantity={items.length}/>
-      {isCartMenuVisicle && <CartModal items={items} active={isCartMenuVisicle} setActive={setIsCartMenuVisible} onClick={()=>null}/>}
+      {isCartMenuVisicle && <CartModal key={items.id}items={items} active={isCartMenuVisicle} setActive={setIsCartMenuVisible} onClick={()=>null}/>}
     </div>
   )
 }

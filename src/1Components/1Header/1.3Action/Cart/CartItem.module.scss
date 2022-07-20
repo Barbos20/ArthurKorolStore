@@ -2,10 +2,13 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
+    padding-bottom:-10px;
+    
 
     .description {
         width: 136px;
         height: 190px;
+        margin-bottom: 10px;
 
         .title {
             width: 110px;
@@ -24,10 +27,78 @@
             font-size: 16px;
             line-height: 160%;
         }
+        .atributes{
+            
+        .size {
+            h3 {
+                font-family: 'Raleway';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                color:#1D1F22;
+            }
 
-        .size {}
+            ul {
+                display: flex;
+                margin-left: -40px;
+                margin-top: -9px;
 
-        .color {}
+                li {
+                    font-family: 'Source Sans Pro';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 160%;
+                    color: #1D1F22;
+                    width: 24px;
+                    height: 24px;
+                    cursor: pointer;
+                    list-style: none;
+                    border: 1px #1D1F22 solid;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 8px;
+
+                    &.active {
+                        background: #1D1F22;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+
+        .color {
+            margin-top: -2px;
+            h3 {
+                font-family: 'Raleway';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                color:#1D1F22;
+            }
+            .manyColor {
+                margin-top: -11px;
+                margin-left:-3px;
+                display: flex;
+
+                img {
+                    margin-right: 8px;
+                    padding: 3px;
+                    width:16px;
+                    height: 16px;
+
+                    &.active {
+                        border: 1px #5ece7b solid;
+                        padding: 2px;
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
     }
 
     .quantity {

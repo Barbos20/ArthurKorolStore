@@ -3,7 +3,7 @@ import style from './ProductItems.module.scss'
 import { ProductIMG } from '../4ProductIMG/ProductIMG'
 import { BtnBuy } from '../5BtnBuy/Price'
 import { Btn } from '../5BtnBuy/Btn'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setItemInCart } from '../../2Redux/Cart/reducer'
 import { useNavigate } from 'react-router-dom'
 import { setCurrentProduct } from '../../2Redux/Product/reducer'
@@ -13,10 +13,10 @@ export const ProductItems = ({ product }) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const handleClick = (e) => {
-        e.stopPropagation()
-        dispatch(setItemInCart(product))
-    }
+    // const addToCart = (e) => {
+    //     e.stopPropagation()
+    //     dispatch(setItemInCart(product))
+    // }
     const openProduct = () => {
         dispatch(setCurrentProduct(product))
         navigate(RoutesPath.product)
@@ -28,7 +28,7 @@ export const ProductItems = ({ product }) => {
                 <ProductIMG image={product.image} />
             </div>
             <div className={style.circleIcon}>
-                <Btn onClick={handleClick} />
+                <Btn onClick={openProduct} />
             </div>
             <div className={style.productInfo}>
                 <h3 className={style.title}>{product.title}</h3>

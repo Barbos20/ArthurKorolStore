@@ -14,8 +14,6 @@ export const PRODUCT = [
     title: "Apollo Runnung Short",
     price: 60.00,
     path: `${RoutesPath.product}`,
-    size: ['XS','S','M','L'],
-    color:['grey','black','gre'],
     id:1
   },
   {
@@ -23,8 +21,6 @@ export const PRODUCT = [
     title: "Apollo Runnung Short",
     price: 50.00,
     path:'',
-    size: ['XS','S','M','L'],
-    color:['grey','black','gre'],
     id: 2
   },
   {
@@ -32,8 +28,6 @@ export const PRODUCT = [
     title: "Apollo Runnung Short",
     price: 50.00,
     path:'',
-    size: ['XS','S','M','L'],
-    color:['grey','black','gre'],
     id: 3
   },
   {
@@ -41,26 +35,20 @@ export const PRODUCT = [
     title: "Apollo Runnung Short",
     price: 50.00,
     path: `${RoutesPath.product}`,
-    size: ['XS','S','M','L'],
-    color:['grey','black','gre'],
     id:4,
   },
   {
     image: '/imgElements/img3.png',
     title: "Apollo Runnung Short",
     price: 50.00,
-    path:'',
-    size: ['XS','S','M','L'],
-    color:['grey','black','gre'],
+    // path:'',
     id: 5
   },
   {
     image: '/imgElements/img3.png',
     title: "Apollo Runnung Short",
     price: 50.00,
-    path:'',
-    size: ['XS','S','M','L'],
-    color:['grey','black','gre'],
+    // path:'',
     id: 6
   },
 ];

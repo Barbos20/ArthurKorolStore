@@ -6,7 +6,7 @@ import {RoutesPath} from '../../../../4RoutesPath/RoutesPath'
 import style from './CartModal.module.scss'
 
 
-export const CartModal = ({ items, active, setActive}) => {
+export const CartModal = ({ key,items, active, setActive}) => {
     const navigate = useNavigate()
     const openCart = useCallback(()=>{
         setActive(!active)

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
-import SP from '../../../../icons/imgElements/img1.png'
+// import SP from '../../../../icons/imgElements/img1.png'
 import style from './Choice.module.scss'
 
 export const Choice = () => {

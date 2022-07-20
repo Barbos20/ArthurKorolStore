@@ -23,6 +23,7 @@
             font-weight: 600;
             font-size: 30px;
             line-height: 27px;
+
             h1 {
                 font-family: "Raleway";
                 font-style: normal;
@@ -73,6 +74,11 @@
                         font-weight: 400;
                         font-size: 16px;
                         line-height: 18px;
+
+                        &.active {
+                            background: #1D1F22;
+                            color: #FFFFFF;
+                        }
                     }
                 }
 
@@ -89,32 +95,23 @@
 
                     .manyColor {
                         margin-top: -11px;
+                        margin-left:-3px;
                         display: flex;
 
-                        .grey {
-                            cursor: pointer;
-                            height: 32px;
-                            width: 32px;
-                            background-color: #d3d2d5;
+                        img {
                             margin-right: 8px;
-                        }
+                            padding: 3px;
 
-                        .black {
-                            cursor: pointer;
-                            height: 32px;
-                            width: 32px;
-                            background-color: #2b2b2b;
-                            margin-right: 8px;
-                        }
-
-                        .green {
-                            cursor: pointer;
-                            height: 32px;
-                            width: 32px;
-                            background-color: #0f6450;
+                            &.active {
+                                border: 1px #5ece7b solid;
+                                padding: 2px;
+                                margin-right: 8px;
+                            }
                         }
                     }
+
                 }
+
 
                 .price {
                     margin-top: 38px;

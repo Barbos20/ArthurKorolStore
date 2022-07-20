@@ -1,19 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setItemInCart } from '../../../2Redux/Cart/reducer';
 import { Choice } from './CoiceProduct/Choice';
+import classNames from 'classnames';
+import Grey from './color/grey.svg'
+import Black from './color/black.svg'
+import Green from './color/green.svg'
 import style from './ProductPage.module.scss'
 
 
 export const ProductPage = () => {
-  const dispatch = useDispatch()
   const product = useSelector(state => state.product.currentProduct);
+  const sizeType = ['XS', 'S', 'M', 'L']
+  const colorType = [{ src: Grey }, { src: Black }, { src: Green }]
+
+
+  const [size, setSize] = React.useState(product.size[1])
+  const [color, setColor] = React.useState(product.color[1])
+
+  const dispatch = useDispatch()
+  
   if (!product) return "";
 
-const handleClick=(e)=>{
-  e.stopPropagation()
-        dispatch(setItemInCart(product))
-}
+  const handleClick = (e) => {
+    e.stopPropagation()
+    dispatch(setItemInCart(product))
+  }
+
+  const onSizeType = (index) => {
+    setSize(index)
+  }
+  const onColorType =(index)=>{
+    setColor(index)
+  }
+
+console.log(product.title, product.size, product.color)
 
   return (
     <div className={style.page}>
@@ -27,18 +48,14 @@ const handleClick=(e)=>{
             <div className={style.size}>
               <h3>SIZE:</h3>
               <ul>
-                <li>XS</li>
-                <li>S</li>
-                <li>M</li>
-                <li>L</li>
+                {sizeType.map((type, index) => <li key={type} onClick={() => onSizeType(index)} className={size === index ? style.active : ''}>{type}</li>)}
+                {/* {sizeType.map((type, index) => <li key={type} onClick={() => onSizeType(index)} className={classNames({active : size ===index})}>{type}</li>)} */}
               </ul>
             </div>
             <div className={style.color}>
               <h3>COLOR</h3>
               <div className={style.manyColor}>
-                <div className={style.grey} />
-                <div className={style.black} />
-                <div className={style.green} />
+                {colorType.map((type,index) => <img onClick={() => onColorType(index)} className={color === index ? style.active : ''} src={type.src} alt='color'/>)}
               </div>
             </div>
             <div className={style.price}>

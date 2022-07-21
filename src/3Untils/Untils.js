@@ -1,5 +1,6 @@
 export const calcTotalPrice = (items) => {
     const sum = items.length > 0 ? items.reduce((acc, product) => acc += +product.price, 0) : 0;
+    const percent = sum * (0,21)
     return sum.toFixed(2)
 }
 
@@ -11,7 +12,4 @@ export const calcTotalPrice = (items) => {
 //     )
 // }
 
-export const Plus= (items) => {
-    const sum = items+= 1
-    return sum
-}
+

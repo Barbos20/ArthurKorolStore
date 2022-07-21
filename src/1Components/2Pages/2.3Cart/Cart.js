@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import {calcTotalPrice}from '../../../3Untils/Untils'
+import { calcTotalPrice } from '../../../3Untils/Untils'
 import { OrderItem } from './OrederItem/OrderItem'
 import style from './Cart.module.scss'
 
@@ -24,7 +24,7 @@ export const Cart = () => {
             <p>Total:</p>
           </div>
           <div className={style.sum}>
-            <p>$42.00</p>
+            <p>{((calcTotalPrice(items)) * (0.21)).toFixed(2)}</p>
             <p>{items.length}</p>
             <p>{calcTotalPrice(items)}</p>
           </div>

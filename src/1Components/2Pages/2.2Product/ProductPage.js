@@ -21,13 +21,15 @@ export const ProductPage = () => {
   
   if (!product) return "";
 
-  const handleClick = (e) => {
+
+  const addProduct = (e) => {
     e.stopPropagation()
     const obj={
       product,
       size:sizeType[size],
       color:colorType[color]
     }
+    
     dispatch(setItemInCart(product))
   }
 
@@ -62,7 +64,7 @@ export const ProductPage = () => {
             </div>
             <div className={style.price}>
               <h3>{(product.price).toFixed(2)}</h3>
-              <button onClick={handleClick}>ADD TO CART</button>
+              <button onClick={addProduct}>ADD TO CART</button>
             </div>
             <div className={style.about}>
               <p>

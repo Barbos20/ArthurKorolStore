@@ -1,23 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setItemInCart } from "../../../2Redux/Cart/reducer";
+import {
+  setSelectedProductsList,
+  selectSelectedProductsList,
+  setCurrentProductColor,
+} from "../../../2Redux/Product/reducer";
 import { Choice } from "./CoiceProduct/Choice";
-import Grey from "./color/grey.svg";
-import Black from "./color/black.svg";
-import Green from "./color/green.svg";
+
 import style from "./ProductPage.module.scss";
 
 export const ProductPage = () => {
   const product = useSelector((state) => state.product.currentProduct);
-  // const sizeType = ['XS', 'S', 'M', 'L']
-  const sizeType = product.sizes.list;
-  // const colorType = [{ src: Grey }, { src: Black }, { src: Green }];
-  const colorType = product.colors.list;
+  const selectedProducts = useSelector(selectSelectedProductsList);
 
-  
+  const sizeType = product.sizes?.list;
 
-  const [size, setSize] = React.useState(1);
-  const [color, setColor] = React.useState(0);
+  const [size, setSize] = useState(1);
 
   const dispatch = useDispatch();
 
@@ -25,20 +23,14 @@ export const ProductPage = () => {
 
   const addProduct = (e) => {
     e.stopPropagation();
-    const obj = {
-      product,
-      size: sizeType[size],
-      color: colorType[color],
-    };
-
-    dispatch(setItemInCart(obj));
+    dispatch(setSelectedProductsList(product));
   };
 
   const onSizeType = (index) => {
     setSize(index);
   };
-  const onColorType = (index) => {
-    setColor(index);
+  const changeColor = (value) => {
+    dispatch(setCurrentProductColor({ value }));
   };
 
   return (
@@ -68,10 +60,13 @@ export const ProductPage = () => {
             <div className={style.color}>
               <h3>COLOR</h3>
               <div className={style.manyColor}>
-                {colorType.map((type, index) => (
+                {product.colors.list.map((type, index) => (
                   <img
-                    onClick={() => onColorType(index)}
-                    className={color === index ? style.active : ""}
+                    key={index}
+                    onClick={() => changeColor(type)}
+                    className={
+                      product.colors?.currentValue === type ? style.active : ""
+                    }
                     src={type.src}
                     alt="color"
                   />

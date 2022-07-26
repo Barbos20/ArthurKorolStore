@@ -1,13 +1,13 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { calcTotalPrice } from '../../../3Untils/Untils'
-import { OrderItem } from './OrederItem/OrderItem'
-import style from './Cart.module.scss'
+import React from "react";
+import { useSelector } from "react-redux";
+import { calcTotalPrice } from "../../../3Untils/Untils";
+import { OrderItem } from "./OrederItem/OrderItem";
+import style from "./Cart.module.scss";
 
 export const Cart = () => {
-  const items = useSelector(state => state.cart.itemsInCart)
+  const items = useSelector((state) => state.product.selectedProductsList);
   if (items.length < 1) {
-    <h1>THE CART IS EMPTY</h1>
+    <h1>THE CART IS EMPTY</h1>;
   }
 
   return (
@@ -15,7 +15,9 @@ export const Cart = () => {
       <h1>CART</h1>
       <div className={style.description}>
         <div>
-          {items.map(product => <OrderItem product={product} />)}
+          {items.map((product) => (
+            <OrderItem product={product} />
+          ))}
         </div>
         <div className={style.price}>
           <div className={style.behind}>
@@ -24,15 +26,13 @@ export const Cart = () => {
             <p>Total:</p>
           </div>
           <div className={style.sum}>
-            <p>{((calcTotalPrice(items)) * (0.21)).toFixed(2)}</p>
+            <p>{(calcTotalPrice(items) * 0.21).toFixed(2)}</p>
             <p>{items.length}</p>
             <p>{calcTotalPrice(items)}</p>
           </div>
         </div>
-        <button onClick={''}>ORDER</button>
+        <button onClick={() => {}}>ORDER</button>
       </div>
     </div>
-  )
-}
-
-
+  );
+};

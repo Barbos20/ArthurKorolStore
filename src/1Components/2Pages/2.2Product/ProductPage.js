@@ -4,6 +4,7 @@ import {
   setSelectedProductsList,
   selectSelectedProductsList,
   setCurrentProductColor,
+  setCurrentProductSize,
 } from "../../../2Redux/Product/reducer";
 import { Choice } from "./CoiceProduct/Choice";
 
@@ -26,8 +27,8 @@ export const ProductPage = () => {
     dispatch(setSelectedProductsList(product));
   };
 
-  const onSizeType = (index) => {
-    setSize(index);
+  const changeSize = (value) => {
+    dispatch(setCurrentProductSize({value}));
   };
   const changeColor = (value) => {
     dispatch(setCurrentProductColor({ value }));
@@ -45,11 +46,11 @@ export const ProductPage = () => {
             <div className={style.size}>
               <h3>SIZE:</h3>
               <ul>
-                {sizeType.map((type, index) => (
+                {product.sizes.list.map((type, index) => (
                   <li
-                    key={type}
-                    onClick={() => onSizeType(index)}
-                    className={size === index ? style.active : ""}
+                    key={index}
+                    onClick={() => changeSize(type)}
+                    className={product.sizes?.currentValue === type ? style.active : ""}
                   >
                     {type}
                   </li>

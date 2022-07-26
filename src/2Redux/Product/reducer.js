@@ -56,6 +56,33 @@ const productSlice = createSlice({
 
       // state.selectedProductsList.push(action.payload);
     },
+    setCurrentProductSize: (state, action) => {
+      state.currentProduct = {
+        ...state.currentProduct,
+        sizes: {
+          ...state.currentProduct.sizes,
+          currentValue: action.payload.value,
+        },
+      };
+    },
+    setSize: (state, action) => {
+      state.selectedProductsList = state.selectedProductsList.map((item) =>
+        item.product.id === action.payload.id
+          ? {
+              ...item,
+              product: {
+                ...item.product,
+                sizes: {
+                  ...item.product.sizes,
+                  currentValue: action.payload.value,
+                },
+              },
+            }
+          : item
+      );
+
+      // state.selectedProductsList.push(action.payload);
+    },
   },
 });
 
@@ -63,8 +90,10 @@ export const {
   setCurrentProduct,
   setCurrentProductColor,
   setSelectedProductsList,
+  setCurrentProductSize,
   removeItemFromSelectedList,
   setColor,
+  setSize,
 } = productSlice.actions;
 
 export const selectCurrentProduct = (state) => {

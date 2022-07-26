@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { calcTotalPrice } from "../../../../3Untils/Untils";
 import { CartItem } from "./CartItem";
 import { RoutesPath } from "../../../../4RoutesPath/RoutesPath";
-import { setColor } from "../../../../2Redux/Product/reducer";
+import { setColor, setSize } from "../../../../2Redux/Product/reducer";
 import style from "./CartModal.module.scss";
 
 export const CartModal = ({ key, items, active, setActive }) => {
@@ -17,6 +17,9 @@ export const CartModal = ({ key, items, active, setActive }) => {
 
   const handleSetColor = (id, value) => {
     dispatch(setColor({ id, value }));
+  };
+  const handleSetSize = (id, value) => {
+    dispatch(setSize({ id, value }));
   };
 
   return (
@@ -56,6 +59,9 @@ export const CartModal = ({ key, items, active, setActive }) => {
                       count={count}
                       handleSetColor={(value) => {
                         handleSetColor(id, value);
+                      }}
+                      handleSetSize={(value)=>{
+                        handleSetSize(id,value)
                       }}
                       id={id}
                     />

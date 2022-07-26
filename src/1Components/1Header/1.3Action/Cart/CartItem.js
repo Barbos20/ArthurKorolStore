@@ -9,6 +9,7 @@ export const CartItem = ({
   image,
   count,
   handleSetColor,
+  handleSetSize,
 }) => {
   const sizeType = ["XS", "S", "M", "L"];
 
@@ -27,11 +28,11 @@ export const CartItem = ({
           <div className={style.size}>
             <h3>Size:</h3>
             <ul>
-              {sizeType.map((type, index) => (
+              {sizes.list.map((type, index) => (
                 <li
-                  key={type}
-                  onClick={() => onSizeType(index)}
-                  className={size === index ? style.active : ""}
+                  key={index}
+                  onClick={() => handleSetSize(type)}
+                  className={type === sizes.currentValue ? style.active : ""}
                 >
                   {type}
                 </li>

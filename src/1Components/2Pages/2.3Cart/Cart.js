@@ -1,14 +1,23 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { calcTotalPrice } from "../../../3Untils/Untils";
 import { OrderItem } from "./OrederItem/OrderItem";
 import style from "./Cart.module.scss";
+import { setColor, setSize } from "../../../2Redux/Product/reducer";
 
 export const Cart = () => {
+  const dispatch = useDispatch()
   const items = useSelector((state) => state.product.selectedProductsList);
   if (items.length < 1) {
     <h1>THE CART IS EMPTY</h1>;
   }
+
+  const handleSetColor = (id, value) => {
+    dispatch(setColor({ id, value }));
+  };
+  const handleSetSize = (id, value) => {
+    dispatch(setSize({ id, value }));
+  };
 
   return (
     <div className={style.cart}>
@@ -16,7 +25,7 @@ export const Cart = () => {
       <div className={style.description}>
         <div>
           {items.map((product) => (
-            <OrderItem product={product} />
+            <OrderItem product={product} handleSetColor={handleSetColor} handleSetSize={handleSetSize} />
           ))}
         </div>
         <div className={style.price}>

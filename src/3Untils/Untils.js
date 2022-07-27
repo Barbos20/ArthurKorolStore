@@ -3,7 +3,6 @@ export const calcTotalPrice = (items) => {
     items.length > 0
       ? items.reduce((acc, product) => (acc += +product.price), 0)
       : 0;
-  const percent = sum * (0, 21);
   return sum.toFixed(2);
 };
 

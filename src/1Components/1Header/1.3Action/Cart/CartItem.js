@@ -11,19 +11,11 @@ export const CartItem = ({
   handleSetColor,
   handleSetSize,
 }) => {
-  const sizeType = ["XS", "S", "M", "L"];
-
-  const [size, setSize] = React.useState(2);
-
-  const onSizeType = (index) => {
-    setSize(index);
-  };
-
   return (
     <div className={style.container}>
       <div className={style.description}>
         <div className={style.title}>{title}</div>
-        <div className={style.price}>{price}</div>
+        <div className={style.price}>{price.toFixed(2)}</div>
         <div className={style.atributes}>
           <div className={style.size}>
             <h3>Size:</h3>

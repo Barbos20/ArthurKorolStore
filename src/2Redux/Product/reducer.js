@@ -16,6 +16,11 @@ const productSlice = createSlice({
       id: 0,
     },
     selectedProductsList: [],
+    currentCurrency: {
+      id: "dollar",
+      currencySymbol: "$",
+      shortName: "USD",
+    },
   },
   reducers: {
     setCurrentProduct: (state, action) => {
@@ -83,6 +88,14 @@ const productSlice = createSlice({
 
       // state.selectedProductsList.push(action.payload);
     },
+    setPlusItemList: (state, action) => {},
+    setMinusItemList: (state, action) => {},
+  },
+  setCurrentVallue: (state, action) => {
+    // state.currentCurrency = {
+    //   ...state.currentCurrency,
+    //   currencySymbol: action.payload
+    // }
   },
 });
 
@@ -94,6 +107,9 @@ export const {
   removeItemFromSelectedList,
   setColor,
   setSize,
+  setPlusItemList,
+  setMinusItemList,
+  setCurrentVallue,
 } = productSlice.actions;
 
 export const selectCurrentProduct = (state) => {
@@ -102,6 +118,10 @@ export const selectCurrentProduct = (state) => {
 
 export const selectSelectedProductsList = (state) => {
   return state.product.selectedProductsList;
+};
+
+export const currentCurrency = (state) => {
+  return state.product.currentCurrency;
 };
 
 export default productSlice.reducer;

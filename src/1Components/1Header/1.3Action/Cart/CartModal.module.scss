@@ -115,3 +115,19 @@
     }
   }
 }
+
+@media (max-height:275px){
+  .cartModal {
+    width: 325px;
+    height: 375px;
+    margin-left: 995px;
+    padding: 12px 16px 32px 16px;
+    background-color: #ffffff;
+    cursor: default;
+    z-index: 2;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+  }
+}

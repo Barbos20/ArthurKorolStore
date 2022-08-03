@@ -1,13 +1,18 @@
 import React, { useCallback } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { calcTotalPrice } from "../../../../3Untils/Untils";
 import { CartItem } from "./CartItem";
 import { RoutesPath } from "../../../../4RoutesPath/RoutesPath";
-import { setColor, setSize } from "../../../../2Redux/Product/reducer";
+import {
+  selectCurrentProduct,
+  setColor,
+  setSize,
+} from "../../../../2Redux/Product/reducer";
 import style from "./CartModal.module.scss";
 
 export const CartModal = ({ key, items, active, setActive }) => {
+  const counter = useSelector(selectCurrentProduct);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const openCart = useCallback(() => {
@@ -21,6 +26,7 @@ export const CartModal = ({ key, items, active, setActive }) => {
   const handleSetSize = (id, value) => {
     dispatch(setSize({ id, value }));
   };
+  
 
   return (
     <div
@@ -50,6 +56,7 @@ export const CartModal = ({ key, items, active, setActive }) => {
 
                   return (
                     <CartItem
+                      id={id}
                       key={id}
                       title={title}
                       price={price}
@@ -60,10 +67,9 @@ export const CartModal = ({ key, items, active, setActive }) => {
                       handleSetColor={(value) => {
                         handleSetColor(id, value);
                       }}
-                      handleSetSize={(value)=>{
-                        handleSetSize(id,value)
+                      handleSetSize={(value) => {
+                        handleSetSize(id, value);
                       }}
-                      id={id}
                     />
                   );
                 })

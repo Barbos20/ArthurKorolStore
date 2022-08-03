@@ -23,7 +23,7 @@ export const ProductItems = ({ product, handleOpenProduct }) => {
         <Btn onClick={openProduct} />
       </div>
       <div className={style.productInfo}>
-        <h3 className={style.title}>{product.title}</h3>
+        <h3 className={style.title}>{product.firmProduct}{product.nameProduct}</h3>
         <span className={style.price}>
           <BtnBuy product={product} />
         </span>

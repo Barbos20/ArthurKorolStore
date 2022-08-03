@@ -1,7 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { setMinusItemList, setPlusItemList } from "../../../../2Redux/Product/reducer";
 import style from "./CartItem.module.scss";
 
 export const CartItem = ({
+  id,
   title,
   price,
   sizes,
@@ -11,6 +14,15 @@ export const CartItem = ({
   handleSetColor,
   handleSetSize,
 }) => {
+const dispatch = useDispatch()
+  const handlePlusCount = () => {
+    dispatch(setPlusItemList(id));
+    
+  };
+  const handleMinusCount = () => {
+    dispatch(setMinusItemList(id));
+  };
+
   return (
     <div className={style.container}>
       <div className={style.description}>
@@ -48,9 +60,9 @@ export const CartItem = ({
         </div>
       </div>
       <div className={style.quantity}>
-        <button onClick={() => null}>+</button>
+        <button onClick={()=>{handlePlusCount(id)}}>+</button>
         <div>{count}</div>
-        <button onClick={() => null}>
+        <button onClick={()=>{handleMinusCount(id)}}>
           <div className={style.minus}>-</div>
         </button>
       </div>

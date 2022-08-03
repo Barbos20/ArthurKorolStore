@@ -28,7 +28,7 @@ export const ProductPage = () => {
   };
 
   const changeSize = (value) => {
-    dispatch(setCurrentProductSize({value}));
+    dispatch(setCurrentProductSize({ value }));
   };
   const changeColor = (value) => {
     dispatch(setCurrentProductColor({ value }));
@@ -40,8 +40,14 @@ export const ProductPage = () => {
         <div className={style.img}>
           <Choice key={product.id} />
         </div>
-        <div className={style.name}>
-          {product.title}
+        <div className={style.info}>
+          <div className={style.firm}>
+          {product.firmProduct}
+          </div>
+          <div className={style.name}>
+          {product.nameProduct}
+          </div>
+          
           <div className={style.attributes}>
             <div className={style.size}>
               <h3>SIZE:</h3>
@@ -50,7 +56,9 @@ export const ProductPage = () => {
                   <li
                     key={index}
                     onClick={() => changeSize(type)}
-                    className={product.sizes?.currentValue === type ? style.active : ""}
+                    className={
+                      product.sizes?.currentValue === type ? style.active : ""
+                    }
                   >
                     {type}
                   </li>

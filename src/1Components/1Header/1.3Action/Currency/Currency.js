@@ -2,8 +2,12 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import style from "./Currency.module.scss";
 import ArrowIcon from "../../../../icons/Vector.svg";
 import { CartHeader } from "../Cart/CartHeader";
+import { useDispatch, useSelector } from "react-redux";
+import { currentCurrency, setCurrentVallue } from "../../../../2Redux/Product/reducer";
 
 export const Currency = () => {
+  const symbol = useSelector(currentCurrency)
+  const dispatch = useDispatch()
 
   const [currentValue, setCurrentValue] = useState({
     id: "dollar",
@@ -21,6 +25,7 @@ export const Currency = () => {
   ];
 
   const itemOnClick = (item) => {
+    // dispatch(setCurrentVallue(item))
     setCurrentValue(item);
     setIsOpenSelectList(false);
   };
@@ -55,6 +60,7 @@ export const Currency = () => {
         <div className={style.Text}>
           {""}
           {currentValue.currencySymbol}
+          {/* {symbol.currencySymbol} */}
           <img
             className={isOpenSelectList ? style.Open : style.Arrow}
             src={ArrowIcon} alt='img'

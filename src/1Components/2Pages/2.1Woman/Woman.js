@@ -11,7 +11,8 @@ import style from "./Woman.module.scss";
 
 export const PRODUCT = [
   {
-    title: "Apollo Runnung Short",
+    firmProduct: "Apollo ",
+    nameProduct:"Running Short",
     price: 60.0,
     sizes: { list: ["XS", "S", "M", "L"], currentValue: "M" },
     colors: {
@@ -19,12 +20,13 @@ export const PRODUCT = [
       currentValue: { src: Black },
     },
     image: "/imgElements/img1.png",
-    count: 1,
+    count: 2,
     path: `${RoutesPath.product}`,
     id: 1,
   },
   {
-    title: "Apollo Runnung Short",
+    firmProduct: "Apollo ",
+    nameProduct:"Running Short",
     price: 50.0,
     sizes: { list: ["XS", "S", "M", "L"], currentValue: "M" },
     colors: {
@@ -37,7 +39,8 @@ export const PRODUCT = [
     id: 2,
   },
   {
-    title: "Apollo Runnung Short",
+    firmProduct: "Apollo ",
+    nameProduct:"Running Short",
     price: 50.0,
     sizes: { list: ["XS", "S", "M", "L"], currentValue: "M" },
     colors: {
@@ -50,7 +53,8 @@ export const PRODUCT = [
     id: 3,
   },
   {
-    title: "Apollo Runnung Short",
+    firmProduct: "Apollo ",
+    nameProduct:"Running Short",
     price: 50.0,
     sizes: { list: ["XS", "S", "M", "L"], currentValue: "M" },
     colors: {
@@ -63,7 +67,8 @@ export const PRODUCT = [
     id: 4,
   },
   {
-    title: "Apollo Runnung Short",
+    firmProduct: "Apollo ",
+    nameProduct:"Running Short",
     price: 50.0,
     sizes: { list: ["XS", "S", "M", "L"], currentValue: "M" },
     colors: {
@@ -76,7 +81,8 @@ export const PRODUCT = [
     id: 5,
   },
   {
-    title: "Apollo Runnung Short",
+    firmProduct: "Apollo ",
+    nameProduct:"Running Short",
     price: 50.0,
     sizes: { list: ["XS", "S", "M", "L"], currentValue: "M" },
     colors: {

@@ -16,9 +16,25 @@
             font-weight: 400;
             font-size: 30px;
             line-height: 27px;
+            .firm {
+                font-family: "Raleway";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 30px;
+                line-height: 27px;
+              }
+              .name {
+                margin-top: 16px;
+                font-family: "Raleway";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 27px;
+              }
         }
 
         .price {
+            margin-top: 20px;
             font-family: 'Raleway';
             font-style: normal;
             font-weight: 700;

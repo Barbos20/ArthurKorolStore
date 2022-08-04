@@ -8,12 +8,6 @@ import { currentCurrency, setCurrentVallue } from "../../../../2Redux/Product/re
 export const Currency = () => {
   const symbol = useSelector(currentCurrency)
   const dispatch = useDispatch()
-
-  const [currentValue, setCurrentValue] = useState({
-    id: "dollar",
-    currencySymbol: "$",
-    shortName: "USD",
-  });
   const [isOpenSelectList, setIsOpenSelectList] = useState(false);
 
   const listRef = useRef(null);
@@ -25,11 +19,10 @@ export const Currency = () => {
   ];
 
   const itemOnClick = (item) => {
-    // dispatch(setCurrentVallue(item))
-    setCurrentValue(item);
+    dispatch(setCurrentVallue(item))
+    // setCurrentValue(item);
     setIsOpenSelectList(false);
   };
-
   const outsideHandler = useCallback(
     (e) => {
       if (
@@ -59,8 +52,8 @@ export const Currency = () => {
       >
         <div className={style.Text}>
           {""}
-          {currentValue.currencySymbol}
-          {/* {symbol.currencySymbol} */}
+          {/* {currentValue.currencySymbol} */}
+          {symbol.currencySymbol}
           <img
             className={isOpenSelectList ? style.Open : style.Arrow}
             src={ArrowIcon} alt='img'

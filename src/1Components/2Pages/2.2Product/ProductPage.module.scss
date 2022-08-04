@@ -109,14 +109,15 @@
           }
 
           .manyColor {
-            margin-top: -16px;
+            margin-top: -11px;
             margin-left: -3px;
             display: flex;
 
-            img {
+            div {
               cursor: pointer;
               margin-right: 8px;
-              padding: 3px;
+              height: 32px;
+              width: 32px;
 
               &.active {
                 border: 1px #5ece7b solid;
@@ -129,23 +130,14 @@
 
         .price {
           margin-top: 38px;
-
-          h3 {
-            font-family: "Roboto Condensed";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 18px;
+          div{
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 18px;
           }
-
-          h1 {
-            margin-top: -10px;
-            font-family: "Raleway";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 18px;
-          }
+          
 
           button {
             cursor: pointer;

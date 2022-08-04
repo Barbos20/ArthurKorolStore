@@ -8,8 +8,8 @@ const productSlice = createSlice({
       price: 0,
       sizes: { list: [], currentValue: "" },
       colors: {
-        list: [{ src: "" }, { src: "" }, { src: "" }],
-        currentValue: { src: "" },
+        list: [],
+        currentValue: {},
       },
       image: "",
       count: 0,
@@ -27,7 +27,23 @@ const productSlice = createSlice({
       state.currentProduct = action.payload;
     },
     setSelectedProductsList: (state, action) => {
-      state.selectedProductsList.push(action.payload);
+      // state.selectedProductsList.push(action.payload);
+      const isProductInCart =
+        state.selectedProductsList.filter(
+          (item) =>
+            item.id === action.payload.id &&
+            item.sizes.currentValue === action.payload.sizes.currentValue &&
+            item.colors.currentValue === action.payload.colors.currenValue
+        ).length > 0;
+      if (isProductInCart) {
+        state.selectedProductsList.map((item) => ({
+          ...item,
+          count: item.count + 1,
+        }));
+      } else {
+        state.selectedProductsList.push(action.payload);
+      }
+      // state.selectedProductsList = state.selectedProductsList.push();
     },
     removeItemFromSelectedList: (state, action) => {
       state.selectedProductsList = state.selectedProductsList.filter(
@@ -90,12 +106,9 @@ const productSlice = createSlice({
     },
     setPlusItemList: (state, action) => {},
     setMinusItemList: (state, action) => {},
-  },
-  setCurrentVallue: (state, action) => {
-    // state.currentCurrency = {
-    //   ...state.currentCurrency,
-    //   currencySymbol: action.payload
-    // }
+    setCurrentVallue: (state, action) => {
+      state.currentCurrency = action.payload;
+    },
   },
 });
 

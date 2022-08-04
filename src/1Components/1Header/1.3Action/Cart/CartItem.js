@@ -1,11 +1,16 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { setMinusItemList, setPlusItemList } from "../../../../2Redux/Product/reducer";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  currentCurrency,
+  setMinusItemList,
+  setPlusItemList,
+} from "../../../../2Redux/Product/reducer";
 import style from "./CartItem.module.scss";
 
 export const CartItem = ({
   id,
-  title,
+  firmProduct,
+  nameProduct,
   price,
   sizes,
   colors,
@@ -14,10 +19,10 @@ export const CartItem = ({
   handleSetColor,
   handleSetSize,
 }) => {
-const dispatch = useDispatch()
+  const symbol = useSelector(currentCurrency);
+  const dispatch = useDispatch();
   const handlePlusCount = () => {
     dispatch(setPlusItemList(id));
-    
   };
   const handleMinusCount = () => {
     dispatch(setMinusItemList(id));
@@ -26,8 +31,14 @@ const dispatch = useDispatch()
   return (
     <div className={style.container}>
       <div className={style.description}>
-        <div className={style.title}>{title}</div>
-        <div className={style.price}>{price.toFixed(2)}</div>
+        <div className={style.title}>
+          {firmProduct}
+          {nameProduct}
+        </div>
+        <div className={style.price}>
+          {symbol.currencySymbol}
+          {price.toFixed(2)}
+        </div>
         <div className={style.atributes}>
           <div className={style.size}>
             <h3>Size:</h3>
@@ -47,22 +58,32 @@ const dispatch = useDispatch()
             <h3>Color:</h3>
             <div className={style.manyColor}>
               {colors.list.map((type, index) => (
-                <img
+                <div
                   key={index}
                   onClick={() => handleSetColor(type)}
                   className={type === colors.currentValue ? style.active : ""}
-                  src={type.src}
-                  alt="color"
-                />
+                >
+                  {type}
+                </div>
               ))}
             </div>
           </div>
         </div>
       </div>
       <div className={style.quantity}>
-        <button onClick={()=>{handlePlusCount(id)}}>+</button>
+        <button
+          onClick={() => {
+            handlePlusCount(id);
+          }}
+        >
+          +
+        </button>
         <div>{count}</div>
-        <button onClick={()=>{handleMinusCount(id)}}>
+        <button
+          onClick={() => {
+            handleMinusCount(id);
+          }}
+        >
           <div className={style.minus}>-</div>
         </button>
       </div>

@@ -10,6 +10,7 @@ import {
   setSize,
 } from "../../../../2Redux/Product/reducer";
 import style from "./CartModal.module.scss";
+import { EmptyCart } from "./EmptyCart";
 
 export const CartModal = ({ key, items, active, setActive }) => {
   const counter = useSelector(selectCurrentProduct);
@@ -51,14 +52,15 @@ export const CartModal = ({ key, items, active, setActive }) => {
           <div className={style.title}>
             {items.length > 0
               ? items.map((item) => {
-                  const { id, image, price, title, sizes, colors, count } =
+                  const { id, image, price, firmProduct, nameProduct, sizes, colors, count } =
                     item;
 
                   return (
                     <CartItem
                       id={id}
                       key={id}
-                      title={title}
+                      firmProduct={firmProduct}
+                      nameProduct={nameProduct}
                       price={price}
                       sizes={sizes}
                       image={image}
@@ -73,7 +75,9 @@ export const CartModal = ({ key, items, active, setActive }) => {
                     />
                   );
                 })
-              : null}
+              : <div className={style.empty}>
+                <EmptyCart/>
+                </div>}
           </div>
         </div>
         <div className={style.description}>

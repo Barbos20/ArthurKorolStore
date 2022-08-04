@@ -1,12 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { currentCurrency } from "../../../../2Redux/Product/reducer";
 // import { useSelector } from "react-redux";
 import { ProductIMG } from "../../../4ProductIMG/ProductIMG";
 import style from "./OrderItem.module.scss";
 
 export const OrderItem = ({ product, handleSetSize, handleSetColor }) => {
   // const items = useSelector((state) => state.product.selectedProductsList);
-  const plus = () => {};
-  console.log("size:", product.sizes);
+  const symbol = useSelector(currentCurrency)
+  
   return (
     <div className={style.container}>
       <div className={style.atributes}>
@@ -14,7 +16,7 @@ export const OrderItem = ({ product, handleSetSize, handleSetColor }) => {
           <div className={style.firm}>{product.firmProduct}</div>
           <div className={style.name}>{product.nameProduct}</div>
         </div>
-        <div className={style.price}>{product.price.toFixed(2)}</div>
+        <div className={style.price}>{symbol.currencySymbol}{product.price.toFixed(2)}</div>
         <div className={style.size}>
           <h3>Size:</h3>
           <ul>
@@ -50,7 +52,7 @@ export const OrderItem = ({ product, handleSetSize, handleSetColor }) => {
       </div>
       <div className={style.view}>
         <div className={style.quantity}>
-          <div className={style.btn} onClick={plus}>
+          <div className={style.btn} onClick={()=>{}}>
             +
           </div>
           <div>1</div>

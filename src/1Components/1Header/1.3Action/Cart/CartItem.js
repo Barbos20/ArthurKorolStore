@@ -2,8 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   currentCurrency,
-  setMinusItemList,
-  setPlusItemList,
+  setDecrementCount,
+  setIncrementCount,
 } from "../../../../2Redux/Product/reducer";
 import style from "./CartItem.module.scss";
 
@@ -22,10 +22,10 @@ export const CartItem = ({
   const symbol = useSelector(currentCurrency);
   const dispatch = useDispatch();
   const handlePlusCount = () => {
-    dispatch(setPlusItemList(id));
+    dispatch(setIncrementCount({id,colors,sizes}));
   };
   const handleMinusCount = () => {
-    dispatch(setMinusItemList(id));
+    dispatch(setDecrementCount({id,colors,sizes}));
   };
 
   return (
@@ -58,13 +58,13 @@ export const CartItem = ({
             <h3>Color:</h3>
             <div className={style.manyColor}>
               {colors.list.map((type, index) => (
-                <div
+                <img
                   key={index}
                   onClick={() => handleSetColor(type)}
                   className={type === colors.currentValue ? style.active : ""}
-                >
-                  {type}
-                </div>
+                  src={type}
+                  alt="color"
+                />
               ))}
             </div>
           </div>
@@ -72,17 +72,13 @@ export const CartItem = ({
       </div>
       <div className={style.quantity}>
         <button
-          onClick={() => {
-            handlePlusCount(id);
-          }}
+          onClick={handlePlusCount}
         >
           +
         </button>
         <div>{count}</div>
         <button
-          onClick={() => {
-            handleMinusCount(id);
-          }}
+          onClick={handleMinusCount}
         >
           <div className={style.minus}>-</div>
         </button>

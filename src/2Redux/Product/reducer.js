@@ -27,23 +27,33 @@ const productSlice = createSlice({
       state.currentProduct = action.payload;
     },
     setSelectedProductsList: (state, action) => {
-      // state.selectedProductsList.push(action.payload);
       const isProductInCart =
         state.selectedProductsList.filter(
           (item) =>
-            item.id === action.payload.id &&
-            item.sizes.currentValue === action.payload.sizes.currentValue &&
-            item.colors.currentValue === action.payload.colors.currenValue
-        ).length > 0;
-      if (isProductInCart) {
-        state.selectedProductsList.map((item) => ({
-          ...item,
-          count: item.count + 1,
-        }));
-      } else {
-        state.selectedProductsList.push(action.payload);
-      }
-      // state.selectedProductsList = state.selectedProductsList.push();
+          item.id === action.payload.id &&
+          item.colors.currentValue === action.payload.colors.currentValue &&
+          item.sizes.currentValue === action.payload.sizes.currentValue
+        ).length>0;
+      const preparedArr = state.selectedProductsList.map((item) => {
+          if(item.id === action.payload.id &&
+            item.colors.currentValue === action.payload.colors.currentValue &&
+            item.sizes.currentValue === action.payload.sizes.currentValue)
+            {
+              return (
+                {
+                  ...item,
+                  count: item.count + 1,
+                }
+              )
+            }else{
+              return item
+            }
+         });
+         if(isProductInCart){
+          state.selectedProductsList=[...preparedArr]
+         }else{
+          state.selectedProductsList.push(action.payload);
+         }
     },
     removeItemFromSelectedList: (state, action) => {
       state.selectedProductsList = state.selectedProductsList.filter(
@@ -75,7 +85,6 @@ const productSlice = createSlice({
           : item
       );
 
-      // state.selectedProductsList.push(action.payload);
     },
     setCurrentProductSize: (state, action) => {
       state.currentProduct = {
@@ -102,10 +111,30 @@ const productSlice = createSlice({
           : item
       );
 
-      // state.selectedProductsList.push(action.payload);
     },
-    setPlusItemList: (state, action) => {},
-    setMinusItemList: (state, action) => {},
+    setIncrementCount: (state, action) => {
+      state.selectedProductsList = state.selectedProductsList.map((item)=>(
+        item.id === action.payload.id &&
+        item.colors.currentValue === action.payload.colors.currentValue &&
+        item.sizes.currentValue === action.payload.sizes.currentValue ?{
+          ...item,
+          count: item.count+1
+        }:item
+      ))
+    },
+    setDecrementCount: (state, action) => {
+      state.selectedProductsList = state.selectedProductsList.map((item)=>(
+        item.id === action.payload.id &&
+        item.colors.currentValue === action.payload.colors.currentValue &&
+        item.sizes.currentValue === action.payload.sizes.currentValue ?{
+          ...item,
+          count: item.count-1
+        }:item
+      )).filter((item)=>(
+        item.count>0
+      ))
+    },
+
     setCurrentVallue: (state, action) => {
       state.currentCurrency = action.payload;
     },
@@ -120,8 +149,8 @@ export const {
   removeItemFromSelectedList,
   setColor,
   setSize,
-  setPlusItemList,
-  setMinusItemList,
+  setIncrementCount,
+  setDecrementCount,
   setCurrentVallue,
 } = productSlice.actions;
 

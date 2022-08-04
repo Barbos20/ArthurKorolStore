@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { calcTotalCount } from "../../../../3Utils/Utils";
 import EmptyCart from "../../../../icons/CircleIcon.svg";
 import { ItemInCart } from "../ItemInCart/ItemInCart";
 import { CartModal } from "./CartModal";
@@ -16,7 +17,7 @@ export const CartHeader = () => {
         }}
         alt="cart"
       />
-      <ItemInCart quantity={items.length} />
+      <ItemInCart quantity={calcTotalCount(items)} />
       {isCartMenuVisicle && (
         <CartModal
           key={items.id}

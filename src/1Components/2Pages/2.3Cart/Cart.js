@@ -1,10 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { calcTotalPrice } from "../../../3Untils/Untils";
+import { calcTotalPrice } from "../../../3Utils/Utils";
 import { OrderItem } from "./OrederItem/OrderItem";
 import style from "./Cart.module.scss";
 import { currentCurrency, setColor, setSize } from "../../../2Redux/Product/reducer";
 import emptyCart from '../../../icons/emptyCart.svg'
+import { calcTotalCount } from "../../../3Utils/Utils";
 
 export const Cart = () => {
   const symbol = useSelector(currentCurrency)
@@ -30,7 +31,6 @@ export const Cart = () => {
           <div className={style.container}>
           <div>OOPS... YOUR CART IS EMPTY</div>
         <img src={emptyCart} alt='emptyCart'/>
-        {/* <div style={{height: '20px',width: '20px', backgroundColor:'#1D1F22'}}/> */}
         </div>}
           
         </div>
@@ -42,7 +42,7 @@ export const Cart = () => {
           </div>
           <div className={style.sum}>
             <div>{symbol.currencySymbol}{(calcTotalPrice(items) * 0.21).toFixed(2)}</div>
-            <div>{items.length}</div>
+            <div>{calcTotalCount(items)}</div>
             <div>{symbol.currencySymbol}{calcTotalPrice(items)}</div>
           </div>
         </div>

@@ -1,12 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { currentCurrency } from "../../../../2Redux/Product/reducer";
-// import { useSelector } from "react-redux";
 import { ProductIMG } from "../../../4ProductIMG/ProductIMG";
 import style from "./OrderItem.module.scss";
 
 export const OrderItem = ({ product, handleSetSize, handleSetColor }) => {
-  // const items = useSelector((state) => state.product.selectedProductsList);
   const symbol = useSelector(currentCurrency)
   
   return (
@@ -43,7 +41,7 @@ export const OrderItem = ({ product, handleSetSize, handleSetColor }) => {
                 className={
                   type === product.colors.currentValue ? style.active : ""
                 }
-                src={type.src}
+                src={type}
                 alt="color"
               />
             ))}
@@ -55,7 +53,7 @@ export const OrderItem = ({ product, handleSetSize, handleSetColor }) => {
           <div className={style.btn} onClick={()=>{}}>
             +
           </div>
-          <div>1</div>
+          <div>{product.count}</div>
           <div className={style.btn} onClick={() => null}>
             <div className={style.minus}>-</div>
           </div>

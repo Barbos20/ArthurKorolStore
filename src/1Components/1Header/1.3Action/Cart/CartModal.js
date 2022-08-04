@@ -1,11 +1,10 @@
 import React, { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
-import { calcTotalPrice } from "../../../../3Untils/Untils";
+import { calcTotalCount, calcTotalPrice } from "../../../../3Utils/Utils";
 import { CartItem } from "./CartItem";
 import { RoutesPath } from "../../../../4RoutesPath/RoutesPath";
 import {
-  selectCurrentProduct,
   setColor,
   setSize,
 } from "../../../../2Redux/Product/reducer";
@@ -13,7 +12,6 @@ import style from "./CartModal.module.scss";
 import { EmptyCart } from "./EmptyCart";
 
 export const CartModal = ({ key, items, active, setActive }) => {
-  const counter = useSelector(selectCurrentProduct);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const openCart = useCallback(() => {
@@ -44,7 +42,7 @@ export const CartModal = ({ key, items, active, setActive }) => {
       >
         <div className={style.items}>
           <h1>My Bag,</h1>
-          <p>{items.length}</p>
+          <p>{calcTotalCount(items)}</p>
           <p />
           {items.length > 1 ? "items" : "item"}
         </div>

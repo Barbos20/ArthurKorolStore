@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setSelectedProductsList,
-  selectSelectedProductsList,
   setCurrentProductColor,
   setCurrentProductSize,
   currentCurrency,
@@ -14,8 +13,6 @@ import style from "./ProductPage.module.scss";
 export const ProductPage = () => {
   const symbol = useSelector(currentCurrency);
   const product = useSelector((state) => state.product.currentProduct);
-  const selectedProducts = useSelector(selectSelectedProductsList);
-  console.log(selectedProducts);
 
   const dispatch = useDispatch();
 
@@ -64,24 +61,15 @@ export const ProductPage = () => {
               <h3>COLOR</h3>
               <div className={style.manyColor}>
                 {product.colors.list.map((type, index) => (
-                  // <img
-                  //   key={index}
-                  //   onClick={() => changeColor(type)}
-                  //   className={
-                  //     product.colors?.currentValue === type ? style.active : ""
-                  //   }
-                  //   src={type.src}
-                  //   alt="color"
-                  // />
-                  <div
+                  <img
                     key={index}
                     onClick={() => changeColor(type)}
                     className={
                       product.colors?.currentValue === type ? style.active : ""
                     }
-                  >
-                    {type}
-                  </div>
+                    src={type}
+                    alt="color"
+                  />
                 ))}
               </div>
             </div>

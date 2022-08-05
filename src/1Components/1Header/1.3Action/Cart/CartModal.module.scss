@@ -1,7 +1,7 @@
 .container {
   display: flex;
   position: absolute;
-  margin-left: -1290px;
+  margin-left: -1286px;
   margin-top: 10px;
   height: 100vh;
   width: 1440px;
@@ -12,19 +12,22 @@
   transition: 0.3s;
 
   .cartModal {
-    width: 325px;
-    // height: 175px;
-    margin-left: 995px;
-    padding: 12px 16px 32px 16px;
+    position: fixed;
+    width: 300px;
+    // height: 700px;
+    margin-left: 1035px;
+    padding: 0 16px 0 16px;
     background-color: #ffffff;
     cursor: default;
-    z-index: 2;
-    overflow: scroll;
     display: flex;
     flex-direction: column;
-    // flex-wrap: wrap;
+    justify-content: space-between;
 
     .items {
+      height: 90px;
+      width: 300px;
+      background-color: #ffffff;
+      position: fixed;
       font-family: "Raleway";
       font-style: normal;
       display: flex;
@@ -48,21 +51,28 @@
     }
 
     .item {
-      .title {
-        overflow: scroll;
-        .empty{
-          display:flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 20px;
-        }
+      overflow: scroll;
+      margin-top: 90px;
+      margin-bottom: -35px;
+      max-height: 480px;
+      .empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
       }
     }
 
     .description {
+      padding-top: 10px;
+      width: 300px;
+      margin-bottom: 10px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 15px;
       .price {
         display: flex;
-        align-items: center;
         justify-content: space-between;
 
         .total {
@@ -86,6 +96,7 @@
       .button {
         display: flex;
         justify-content: space-between;
+        padding-top: 20px;
 
         .button1 {
           display: flex;
@@ -101,7 +112,7 @@
           color: #1d1f22;
           border: 1px solid #1d1f22;
           background: #ffffff;
-          width: 140px;
+          width: 145px;
           height: 43px;
         }
 
@@ -114,7 +125,7 @@
           line-height: 120%;
           border: none;
           background-color: #5ece7b;
-          width: 140px;
+          width: 145px;
           height: 43px;
         }
       }

@@ -1,10 +1,11 @@
 import React, { useCallback } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { calcTotalCount, calcTotalPrice } from "../../../../3Utils/Utils";
 import { CartItem } from "./CartItem";
 import { RoutesPath } from "../../../../4RoutesPath/RoutesPath";
 import {
+  currentCurrency,
   setColor,
   setSize,
 } from "../../../../2Redux/Product/reducer";
@@ -12,6 +13,7 @@ import style from "./CartModal.module.scss";
 import { EmptyCart } from "./EmptyCart";
 
 export const CartModal = ({ key, items, active, setActive }) => {
+  const symbol = useSelector(currentCurrency);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const openCart = useCallback(() => {
@@ -25,7 +27,6 @@ export const CartModal = ({ key, items, active, setActive }) => {
   const handleSetSize = (id, value) => {
     dispatch(setSize({ id, value }));
   };
-  
 
   return (
     <div
@@ -46,42 +47,56 @@ export const CartModal = ({ key, items, active, setActive }) => {
           <p />
           {items.length > 1 ? "items" : "item"}
         </div>
-        <div className={style.item}>
-          <div className={style.title}>
-            {items.length > 0
-              ? items.map((item) => {
-                  const { id, image, price, firmProduct, nameProduct, sizes, colors, count } =
-                    item;
 
-                  return (
-                    <CartItem
-                      id={id}
-                      key={id}
-                      firmProduct={firmProduct}
-                      nameProduct={nameProduct}
-                      price={price}
-                      sizes={sizes}
-                      image={image}
-                      colors={colors}
-                      count={count}
-                      handleSetColor={(value) => {
-                        handleSetColor(id, value);
-                      }}
-                      handleSetSize={(value) => {
-                        handleSetSize(id, value);
-                      }}
-                    />
-                  );
-                })
-              : <div className={style.empty}>
-                <EmptyCart/>
-                </div>}
-          </div>
+        <div className={style.item}>
+          {items.length > 0 ? (
+            items.map((item) => {
+              const {
+                id,
+                image,
+                price,
+                firmProduct,
+                nameProduct,
+                sizes,
+                colors,
+                count,
+              } = item;
+
+              return (
+                <CartItem
+                  id={id}
+                  key={id}
+                  firmProduct={firmProduct}
+                  nameProduct={nameProduct}
+                  price={price}
+                  sizes={sizes}
+                  image={image}
+                  colors={colors}
+                  count={count}
+                  handleSetColor={(value) => {
+                    handleSetColor(id, value);
+                  }}
+                  handleSetSize={(value) => {
+                    handleSetSize(id, value);
+                  }}
+                />
+                
+              );
+            })
+          ) : (
+            <div className={style.empty}>
+              <EmptyCart />
+            </div>
+          )}
         </div>
+
         <div className={style.description}>
           <div className={style.price}>
             <h1 className={style.total}>Total</h1>
-            <h1 className={style.sum}>{calcTotalPrice(items)}</h1>
+            <div className={style.sum}>
+              {symbol.currencySymbol}
+              {calcTotalPrice(items)}
+            </div>
           </div>
           <div className={style.button}>
             <button className={style.button1} onClick={openCart}>

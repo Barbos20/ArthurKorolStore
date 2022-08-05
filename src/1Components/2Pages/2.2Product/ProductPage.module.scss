@@ -115,14 +115,12 @@
 
             img {
               cursor: pointer;
-              margin-right: 8px;
-              height: 32px;
-              width: 32px;
-
+              padding-right: 8px;
               &.active {
                 border: 1px #5ece7b solid;
                 padding: 2px;
-                margin-right: 8px;
+                margin-right: 5px;
+                margin-left:-3px;
               }
             }
           }

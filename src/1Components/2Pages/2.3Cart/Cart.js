@@ -29,7 +29,7 @@ export const Cart = () => {
             <OrderItem product={product} handleSetColor={handleSetColor} handleSetSize={handleSetSize} />
           )) : 
           <div className={style.container}>
-          <div>OOPS... YOUR CART IS EMPTY</div>
+          <div>OOPS... YOUR CART IS EMPTY !</div>
         <img src={emptyCart} alt='emptyCart'/>
         </div>}
           

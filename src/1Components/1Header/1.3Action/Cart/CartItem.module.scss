@@ -3,8 +3,6 @@
     justify-content: space-between;
     margin-bottom: 40px;
     padding-bottom:-10px;
-    
-
     .description {
         width: 136px;
         height: 190px;
@@ -84,14 +82,15 @@
                 display: flex;
 
                 img {
-                    margin-right: 8px;
+                    padding-top:3px;
+                    padding-right: 8px;
                     width:16px;
                     height: 16px;
 
                     &.active {
                         border: 1px #5ece7b solid;
                         padding: 2px;
-                        margin-right: 8px;
+                        margin-right: 5px;
                     }
                 }
             }

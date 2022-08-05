@@ -1,11 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { currentCurrency } from "../../../../2Redux/Product/reducer";
+import { useDispatch, useSelector } from "react-redux";
+import { currentCurrency, setDecrementCount, setIncrementCount } from "../../../../2Redux/Product/reducer";
 import { ProductIMG } from "../../../4ProductIMG/ProductIMG";
 import style from "./OrderItem.module.scss";
 
 export const OrderItem = ({ product, handleSetSize, handleSetColor }) => {
   const symbol = useSelector(currentCurrency)
+  const dispatch = useDispatch()
+  const handlePlusCount = () => {
+    dispatch(setIncrementCount(product));
+  };
+  const handleMinusCount = () => {
+    dispatch(setDecrementCount(product));
+  };
   
   return (
     <div className={style.container}>
@@ -50,11 +57,11 @@ export const OrderItem = ({ product, handleSetSize, handleSetColor }) => {
       </div>
       <div className={style.view}>
         <div className={style.quantity}>
-          <div className={style.btn} onClick={()=>{}}>
+          <div className={style.btn} onClick={handlePlusCount}>
             +
           </div>
           <div>{product.count}</div>
-          <div className={style.btn} onClick={() => null}>
+          <div className={style.btn} onClick={handleMinusCount}>
             <div className={style.minus}>-</div>
           </div>
         </div>

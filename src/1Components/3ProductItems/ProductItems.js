@@ -5,16 +5,19 @@ import { BtnBuy } from "../5BtnBuy/Price";
 import { Btn } from "../5BtnBuy/Btn";
 import { useNavigate } from "react-router-dom";
 import { RoutesPath } from "../../4RoutesPath/RoutesPath";
-import { currentCurrency } from "../../2Redux/Product/reducer";
-import { useSelector } from "react-redux";
+import { setSelectedProductsList } from "../../2Redux/Product/reducer";
+import { useDispatch } from "react-redux";
 
 export const ProductItems = ({ product, handleOpenProduct }) => {
-  
+  const dispatch = useDispatch()
   const navigate = useNavigate();
 
   const openProduct = () => {
     handleOpenProduct();
     navigate(RoutesPath.product);
+  };
+  const addProduct = () => {
+    dispatch(setSelectedProductsList(product));
   };
 
   return (
@@ -23,7 +26,7 @@ export const ProductItems = ({ product, handleOpenProduct }) => {
         <ProductIMG image={product.image} />
       </div>
       <div className={style.circleIcon}>
-        <Btn onClick={openProduct} />
+        <Btn onClick={addProduct} />
       </div>
       <div className={style.productInfo}>
         <h3 className={style.title}>{product.firmProduct}{product.nameProduct}</h3>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { currentCurrency, setDecrementCount, setIncrementCount } from "../../../../2Redux/Product/reducer";
-import { ProductIMG } from "../../../4ProductIMG/ProductIMG";
+import { ChoicePhoto } from "./ChoicePhoto/ChoicePhoto";
 import style from "./OrderItem.module.scss";
 
 export const OrderItem = ({ product, handleSetSize, handleSetColor }) => {
@@ -54,7 +54,7 @@ export const OrderItem = ({ product, handleSetSize, handleSetColor }) => {
             ))}
           </div>
         </div>
-      </div>
+      </div>  
       <div className={style.view}>
         <div className={style.quantity}>
           <div className={style.btn} onClick={handlePlusCount}>
@@ -66,9 +66,10 @@ export const OrderItem = ({ product, handleSetSize, handleSetColor }) => {
           </div>
         </div>
         <div className={style.IMG}>
-          <ProductIMG image={product.image} />
+        {ChoicePhoto(product)}
         </div>
       </div>
+     
     </div>
   );
 };

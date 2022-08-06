@@ -26,7 +26,7 @@ export const Cart = () => {
       <div className={style.description}>
         <div>
         {items.length >= 1 ? items.map((product) => (
-            <OrderItem product={product} handleSetColor={handleSetColor} handleSetSize={handleSetSize} />
+            <OrderItem key={product.id} product={product} handleSetColor={handleSetColor} handleSetSize={handleSetSize} />
           )) : 
           <div className={style.container}>
           <div>OOPS... YOUR CART IS EMPTY !</div>

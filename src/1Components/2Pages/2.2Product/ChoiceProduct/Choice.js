@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
-// import SP from '../../../../icons/imgElements/img1.png'
 import style from './Choice.module.scss'
 
 export const Choice = () => {
   const product = useSelector(state => state.product.currentProduct);
-  // const images = [{ src: product.image }, { src: SP }, { src: product.image  }];
   const images = [{ src: product.image }, { src: product.image }, { src: product.image }];
   const [select, setSelect] = useState({ src: product.image });
   return (

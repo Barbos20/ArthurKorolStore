@@ -5,24 +5,20 @@ import {
   setCurrentProductColor,
   setCurrentProductSize,
   currentCurrency,
+  selectCurrentProduct,
 } from "../../../2Redux/Product/reducer";
-import { Choice } from "./CoiceProduct/Choice";
+import { Choice } from "./ChoiceProduct/Choice";
 
 import style from "./ProductPage.module.scss";
 
 export const ProductPage = () => {
   const symbol = useSelector(currentCurrency);
-  const product = useSelector((state) => state.product.currentProduct);
-
+  const product = useSelector(selectCurrentProduct);
   const dispatch = useDispatch();
 
-  if (!product) return "";
-
   const addProduct = (e) => {
-    e.stopPropagation();
     dispatch(setSelectedProductsList(product));
   };
-
   const changeSize = (value) => {
     dispatch(setCurrentProductSize({ value }));
   };

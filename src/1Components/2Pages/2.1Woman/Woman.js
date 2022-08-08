@@ -9,6 +9,11 @@ import Black from "../2.2Product/color/black.svg";
 import Green from "../2.2Product/color/green.svg";
 import style from "./Woman.module.scss";
 
+import Photo1 from '../../../icons/imgElements/img1.png'
+import Photo2 from '../../../icons/imgElements/img2.png'
+import Photo3 from '../../../icons/imgElements/img3.png'
+import Photo4 from '../../../icons/imgElements/img4.png'
+
 export const PRODUCT = [
   {
     firmProduct: "Apollo ",
@@ -19,8 +24,8 @@ export const PRODUCT = [
       list: [Grey, Black, Green],
       currentValue: Black,
     },
-    image: "/imgElements/img1.png",
-    changeImage:[{src:"/imgElements/img1.png"},{src:"/imgElements/img2.png"},{src:"/imgElements/img3.png"}],
+    image: Photo1,
+    changeImage:[{src:Photo1},{src:Photo2},{src:Photo3}],
     count: 1,
     path: `${RoutesPath.product}`,
     id: 1,
@@ -34,8 +39,8 @@ export const PRODUCT = [
       list: [Grey, Black, Green],
       currentValue: Black,
     },
-    image: "/imgElements/img4.png",
-    changeImage:[{src:"/imgElements/img4.png"},{src:"/imgElements/img2.png"},{src:"/imgElements/img3.png"}],
+    image: Photo4,
+    changeImage:[{src:Photo4},{src:Photo2},{src:Photo3}],
     count: 1,
     path: `${RoutesPath.product}`,
     id: 2,
@@ -49,8 +54,8 @@ export const PRODUCT = [
       list: [Grey, Black, Green],
       currentValue: Black,
     },
-    image: "/imgElements/img2.png",
-    changeImage:[{src:"/imgElements/img2.png"},{src:"/imgElements/img2.png"},{src:"/imgElements/img3.png"}],
+    image:Photo2,
+    changeImage:[{src:Photo2},{src:Photo2},{src:Photo3},],
     count: 1,
     path: `${RoutesPath.product}`,
     id: 3,
@@ -64,8 +69,8 @@ export const PRODUCT = [
       list: [Grey, Black, Green],
       currentValue: Black,
     },
-    image: "/imgElements/img1.png",
-    changeImage:[{src:"/imgElements/img1.png"},{src:"/imgElements/img2.png"},{src:"/imgElements/img3.png"}],
+    image: Photo1,
+    changeImage:[{src:Photo1},{src:Photo2},{src:Photo3}],
     count: 1,
     path: `${RoutesPath.product}`,
     id: 4,
@@ -79,8 +84,8 @@ export const PRODUCT = [
       list: [Grey, Black, Green],
       currentValue: Black,
     },
-    image: "/imgElements/img3.png",
-    changeImage:[{src:"/imgElements/img3.png"},{src:"/imgElements/img2.png"},{src:"/imgElements/img3.png"}],
+    image: Photo3,
+    changeImage:[{src:Photo3},{src:Photo2},{src:Photo3}],
     count: 1,
     path: `${RoutesPath.product}`,
     id: 5,
@@ -94,8 +99,8 @@ export const PRODUCT = [
       list: [Grey, Black, Green],
       currentValue: Black,
     },
-    image: "/imgElements/img3.png",
-    changeImage:[{src:"/imgElements/img3.png"},{src:"/imgElements/img2.png"},{src:"/imgElements/img3.png"}],
+    image: Photo3,
+    changeImage:[{src:Photo3},{src:Photo2},{src:Photo3}],
     count: 1,
     path: `${RoutesPath.product}`,
     id: 6,

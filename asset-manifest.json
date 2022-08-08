@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/store1/static/css/main.8254b0e9.css",
+    "main.js": "/store1/static/js/main.1452d627.js",
+    "static/js/787.48236917.chunk.js": "/store1/static/js/787.48236917.chunk.js",
+    "static/media/emptyCart.svg": "/store1/static/media/emptyCart.cb25b647a62786c411cc99ee74f4f886.svg",
+    "static/media/a-logo.svg": "/store1/static/media/a-logo.bb68d089ab4aa9be17333cb448f4bd42.svg",
+    "static/media/CircleIcon.svg": "/store1/static/media/CircleIcon.3cf3e89e7662cb5988eb8556294d47c1.svg",
+    "static/media/cart.svg": "/store1/static/media/cart.07f805b968347b5d5215b44a9861339e.svg",
+    "index.html": "/store1/index.html",
+    "static/media/Vector.svg": "/store1/static/media/Vector.766d7b11f183f77a1e40c47ea18dd7ee.svg",
+    "static/media/black.svg": "/store1/static/media/black.c8c0814fbda06c7621991b0120d4959b.svg",
+    "static/media/green.svg": "/store1/static/media/green.4690cc75822b82974103732bda0107f2.svg",
+    "static/media/grey.svg": "/store1/static/media/grey.79498686ede2d99ce886a0fd3b390f06.svg",
+    "main.8254b0e9.css.map": "/store1/static/css/main.8254b0e9.css.map",
+    "main.1452d627.js.map": "/store1/static/js/main.1452d627.js.map",
+    "787.48236917.chunk.js.map": "/store1/static/js/787.48236917.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8254b0e9.css",
+    "static/js/main.1452d627.js"
+  ]
+}

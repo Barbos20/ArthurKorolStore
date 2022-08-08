@@ -20,7 +20,6 @@ export const Currency = () => {
 
   const itemOnClick = (item) => {
     dispatch(setCurrentVallue(item))
-    // setCurrentValue(item);
     setIsOpenSelectList(false);
   };
   const outsideHandler = useCallback(

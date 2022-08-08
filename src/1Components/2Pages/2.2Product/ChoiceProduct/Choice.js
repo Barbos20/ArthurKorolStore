@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
-import style from './Choice.module.scss'
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import style from "./Choice.module.scss";
 
-export const Choice = () => {
-  const product = useSelector(state => state.product.currentProduct);
-  const images = [{ src: product.image }, { src: product.image }, { src: product.image }];
-  const [select, setSelect] = useState({ src: product.image });
+export const Choice = (id) => {
+  const product = useSelector((state) => state.product.currentProduct);
+  const [select, setSelect] = useState(product.changeImage[0]);
+
   return (
     <div className={style.container}>
       <div className={style.choice}>
-        {images.map((pic) => {
+        {product.changeImage.map((pic) => {
           return (
             <img
-              alt='img'
+              key={id}
+              alt="img"
               src={pic.src}
               className={style.Img}
               onClick={() => {
@@ -24,7 +25,5 @@ export const Choice = () => {
       </div>
       <img src={select.src} alt="IMG" className={style.img} />
     </div>
-  )
-}
-
-
+  );
+};

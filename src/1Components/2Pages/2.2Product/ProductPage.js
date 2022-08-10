@@ -32,7 +32,7 @@ export const ProductPage = () => {
     <div className={style.page}>
       <div className={style.description}>
         <div className={style.img}>
-          <Choice key={product.id}/>
+          <Choice id={product.id}/>
         </div>
         <div className={style.info}>
           <div className={style.firm}>{product.firmProduct}</div>

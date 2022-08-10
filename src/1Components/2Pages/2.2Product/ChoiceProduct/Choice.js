@@ -12,7 +12,6 @@ export const Choice = (id) => {
         {product.changeImage.map((pic) => {
           return (
             <img
-              key={id}
               alt="img"
               src={pic.src}
               className={style.Img}

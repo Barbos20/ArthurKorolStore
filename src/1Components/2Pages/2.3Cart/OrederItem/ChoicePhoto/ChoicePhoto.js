@@ -23,11 +23,6 @@ export const ChoicePhoto = (product) => {
 
   return (
     <div className={style.window}>
-      <div className={style.choice}>
-        <div onClick={handleLeft}>{" < "}</div>
-        <div onClick={handleRight}>{" > "}</div>
-      </div>
-    
       {product.changeImage.map((pic) => {
         return (
           <div
@@ -38,6 +33,10 @@ export const ChoicePhoto = (product) => {
           </div>
         );
       })}
+      <div className={style.choice}>
+        <div onClick={handleLeft}>{" < "}</div>
+        <div onClick={handleRight}>{" > "}</div>
       </div>
+    </div>
   );
 };

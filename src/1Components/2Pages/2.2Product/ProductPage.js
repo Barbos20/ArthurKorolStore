@@ -88,7 +88,6 @@ export const ProductPage = () => {
               }}>ADD TO CART</button>
               :<button onClick={addProduct}>ADD TO CART</button>
             }
-              {/* <button onClick={addProduct}>ADD TO CART</button> */}
             </div>
             <div className={style.about}>
               <p>

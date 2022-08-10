@@ -4,7 +4,7 @@ import accepted from "../../../../icons/accepted.svg";
 import emptyCart from "../../../../icons/emptyCart.svg";
 import style from "./OrderModal.module.scss";
 
-export const OrderModal = ({ active, setActive, close }) => {
+export const OrderModal = ({ close }) => {
   const items = useSelector((state) => state.product.selectedProductsList);
   return (
     <div className={style.containerModal} onClick={close()}>

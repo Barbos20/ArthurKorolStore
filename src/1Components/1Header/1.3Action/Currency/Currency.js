@@ -51,7 +51,6 @@ export const Currency = () => {
       >
         <div className={style.Text}>
           {""}
-          {/* {currentValue.currencySymbol} */}
           {symbol.currencySymbol}
           <img
             className={isOpenSelectList ? style.Open : style.Arrow}

@@ -26,7 +26,6 @@ export const ProductItems = ({ product, handleOpenProduct }) => {
   return product.id === 5 ? (
     <div className={style.disabled}>
       <div className={style.projectIcon} onClick={openProduct}>
-        {/* <ProductIMG image={product.image} /> */}
         <img src={product.image} alt='page'/>
         <div>OUT OF STOCK</div>
       </div>

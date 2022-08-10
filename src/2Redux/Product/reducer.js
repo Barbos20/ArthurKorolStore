@@ -134,7 +134,11 @@ const productSlice = createSlice({
         item.count>0
       ))
     },
-
+setNullificationItems:(state,action)=>{
+  state.selectedProductsList = state.selectedProductsList.filter((item)=>(
+    item = 0
+  ))
+},
     setCurrentVallue: (state, action) => {
       state.currentCurrency = action.payload;
     },
@@ -152,6 +156,7 @@ export const {
   setIncrementCount,
   setDecrementCount,
   setCurrentVallue,
+  setNullificationItems
 } = productSlice.actions;
 
 export const selectCurrentProduct = (state) => {

@@ -1,5 +1,7 @@
 export const RoutesPath={
     product:'/product',
     cart:'/cart',
-    woman:'/woman'
+    woman:'/woman',
+    man:'/man',
+    kids:'/kids'
 }

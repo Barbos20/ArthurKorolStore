@@ -28,6 +28,7 @@ export const CartModal = ({ key, items, active, setActive }) => {
     dispatch(setSize({ id, value }));
   };
 
+
   return (
     <div
       className={style.container}
@@ -102,7 +103,7 @@ export const CartModal = ({ key, items, active, setActive }) => {
             <button className={style.button1} onClick={openCart}>
               VIEW BAG
             </button>
-            <button className={style.button2}>CHECK OUT</button>
+            <button className={style.button2} onClick={()=>{setActive(!active)}}>CHECK OUT</button>
           </div>
           <div></div>
         </div>

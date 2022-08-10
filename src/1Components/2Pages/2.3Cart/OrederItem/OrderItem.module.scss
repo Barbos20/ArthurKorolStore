@@ -9,9 +9,8 @@
     height: 336px;
     margin-bottom: -1px;
 
-
-
     .atributes {
+        user-select: none;
         .title {
             font-family: 'Raleway';
             font-style: normal;
@@ -128,6 +127,9 @@
             font-size: 16px;
             line-height: 160%;
             margin-right: 24px;
+            div{
+                user-select: none;
+            }
 
             .btn {
                 display: flex;
@@ -142,9 +144,11 @@
                 border: 1px #1D1F22 solid;
                 color: #1D1F22;
                 background-color: #ffffff;
+                user-select: none;
 
                 .minus {
                     padding-bottom: 4px;
+                    user-select: none;
                 }
             }
         }

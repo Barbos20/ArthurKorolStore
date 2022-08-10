@@ -11,6 +11,7 @@
     margin: 248px 16px 16px 128px;
     user-select: none;
     div {
+      
       cursor: pointer;
       display: flex;
       align-items: flex-end;
@@ -25,10 +26,12 @@
   .image {
     position: relative;
     transition: 0.3s;
+    z-index: -1;
 
     .Img {
       height: 288px;
       width: 200px;
+      
     }
   }
 }

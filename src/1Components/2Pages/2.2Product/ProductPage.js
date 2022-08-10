@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setSelectedProductsList,
@@ -8,10 +8,12 @@ import {
   selectCurrentProduct,
 } from "../../../2Redux/Product/reducer";
 import { Choice } from "./ChoiceProduct/Choice";
+import { ProductModal } from "./ProductModal/ProductModal";
 
 import style from "./ProductPage.module.scss";
 
 export const ProductPage = () => {
+  const [isCartMenuVisicle, setIsCartMenuVisible] = useState(false);
   const symbol = useSelector(currentCurrency);
   const product = useSelector(selectCurrentProduct);
   const dispatch = useDispatch();
@@ -74,7 +76,19 @@ export const ProductPage = () => {
                 {symbol.currencySymbol}
                 {product.price.toFixed(2)}
               </div>
-              <button onClick={addProduct}>ADD TO CART</button>
+              {isCartMenuVisicle && (
+        <ProductModal
+        active={isCartMenuVisicle}
+        setActive={setIsCartMenuVisible}
+        />
+      )}
+              {product.id === 5
+              ?<button onClick={() => {
+                setIsCartMenuVisible(!isCartMenuVisicle);
+              }}>ADD TO CART</button>
+              :<button onClick={addProduct}>ADD TO CART</button>
+            }
+              {/* <button onClick={addProduct}>ADD TO CART</button> */}
             </div>
             <div className={style.about}>
               <p>

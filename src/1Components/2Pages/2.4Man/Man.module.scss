@@ -1,0 +1,15 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 1440px;
+  align-items: center;
+  margin-top: 200px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 160%;
+  img{
+    height: 200px;
+  }
+}

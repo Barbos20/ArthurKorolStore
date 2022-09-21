@@ -1,23 +1,30 @@
 {
   "files": {
-    "main.css": "/store1/static/css/main.8254b0e9.css",
-    "main.js": "/store1/static/js/main.1452d627.js",
-    "static/js/787.48236917.chunk.js": "/store1/static/js/787.48236917.chunk.js",
-    "static/media/emptyCart.svg": "/store1/static/media/emptyCart.cb25b647a62786c411cc99ee74f4f886.svg",
-    "static/media/a-logo.svg": "/store1/static/media/a-logo.bb68d089ab4aa9be17333cb448f4bd42.svg",
-    "static/media/CircleIcon.svg": "/store1/static/media/CircleIcon.3cf3e89e7662cb5988eb8556294d47c1.svg",
-    "static/media/cart.svg": "/store1/static/media/cart.07f805b968347b5d5215b44a9861339e.svg",
-    "index.html": "/store1/index.html",
-    "static/media/Vector.svg": "/store1/static/media/Vector.766d7b11f183f77a1e40c47ea18dd7ee.svg",
-    "static/media/black.svg": "/store1/static/media/black.c8c0814fbda06c7621991b0120d4959b.svg",
-    "static/media/green.svg": "/store1/static/media/green.4690cc75822b82974103732bda0107f2.svg",
-    "static/media/grey.svg": "/store1/static/media/grey.79498686ede2d99ce886a0fd3b390f06.svg",
-    "main.8254b0e9.css.map": "/store1/static/css/main.8254b0e9.css.map",
-    "main.1452d627.js.map": "/store1/static/js/main.1452d627.js.map",
-    "787.48236917.chunk.js.map": "/store1/static/js/787.48236917.chunk.js.map"
+    "main.css": "/ArthurKorolStore/static/css/main.bc68d84e.css",
+    "main.js": "/ArthurKorolStore/static/js/main.6107e21c.js",
+    "static/js/787.48236917.chunk.js": "/ArthurKorolStore/static/js/787.48236917.chunk.js",
+    "static/media/img1.png": "/ArthurKorolStore/static/media/img1.1461e43df99eb0a2f12a.png",
+    "static/media/img2.png": "/ArthurKorolStore/static/media/img2.9d815ee613dae938d323.png",
+    "static/media/img4.png": "/ArthurKorolStore/static/media/img4.24204ecb3e445ab306f8.png",
+    "static/media/img3.png": "/ArthurKorolStore/static/media/img3.d3b4541608ab927923d4.png",
+    "static/media/emptyCart.svg": "/ArthurKorolStore/static/media/emptyCart.cb25b647a62786c411cc99ee74f4f886.svg",
+    "static/media/accepted.svg": "/ArthurKorolStore/static/media/accepted.6c26b1b229824232808dafb4a51f94e8.svg",
+    "static/media/Stick.svg": "/ArthurKorolStore/static/media/Stick.655ed2f0fdde9b506732c5af5369e038.svg",
+    "static/media/stock.svg": "/ArthurKorolStore/static/media/stock.32527fd759c8fee224e87068df4c7bab.svg",
+    "static/media/a-logo.svg": "/ArthurKorolStore/static/media/a-logo.bb68d089ab4aa9be17333cb448f4bd42.svg",
+    "static/media/CircleIcon.svg": "/ArthurKorolStore/static/media/CircleIcon.10179b97f6e354927e95e45bc3bf57e0.svg",
+    "static/media/cart.svg": "/ArthurKorolStore/static/media/cart.07f805b968347b5d5215b44a9861339e.svg",
+    "index.html": "/ArthurKorolStore/index.html",
+    "static/media/Vector.svg": "/ArthurKorolStore/static/media/Vector.766d7b11f183f77a1e40c47ea18dd7ee.svg",
+    "static/media/black.svg": "/ArthurKorolStore/static/media/black.c8c0814fbda06c7621991b0120d4959b.svg",
+    "static/media/green.svg": "/ArthurKorolStore/static/media/green.4690cc75822b82974103732bda0107f2.svg",
+    "static/media/grey.svg": "/ArthurKorolStore/static/media/grey.79498686ede2d99ce886a0fd3b390f06.svg",
+    "main.bc68d84e.css.map": "/ArthurKorolStore/static/css/main.bc68d84e.css.map",
+    "main.6107e21c.js.map": "/ArthurKorolStore/static/js/main.6107e21c.js.map",
+    "787.48236917.chunk.js.map": "/ArthurKorolStore/static/js/787.48236917.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8254b0e9.css",
-    "static/js/main.1452d627.js"
+    "static/css/main.bc68d84e.css",
+    "static/js/main.6107e21c.js"
   ]
 }

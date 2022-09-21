@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ArthurKorolStore/static/css/main.bc68d84e.css",
-    "main.js": "/ArthurKorolStore/static/js/main.6107e21c.js",
+    "main.js": "/ArthurKorolStore/static/js/main.d75a7d87.js",
     "static/js/787.48236917.chunk.js": "/ArthurKorolStore/static/js/787.48236917.chunk.js",
     "static/media/img1.png": "/ArthurKorolStore/static/media/img1.1461e43df99eb0a2f12a.png",
     "static/media/img2.png": "/ArthurKorolStore/static/media/img2.9d815ee613dae938d323.png",
@@ -20,11 +20,11 @@
     "static/media/green.svg": "/ArthurKorolStore/static/media/green.4690cc75822b82974103732bda0107f2.svg",
     "static/media/grey.svg": "/ArthurKorolStore/static/media/grey.79498686ede2d99ce886a0fd3b390f06.svg",
     "main.bc68d84e.css.map": "/ArthurKorolStore/static/css/main.bc68d84e.css.map",
-    "main.6107e21c.js.map": "/ArthurKorolStore/static/js/main.6107e21c.js.map",
+    "main.d75a7d87.js.map": "/ArthurKorolStore/static/js/main.d75a7d87.js.map",
     "787.48236917.chunk.js.map": "/ArthurKorolStore/static/js/787.48236917.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bc68d84e.css",
-    "static/js/main.6107e21c.js"
+    "static/js/main.d75a7d87.js"
   ]
 }
